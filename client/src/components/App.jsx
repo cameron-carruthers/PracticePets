@@ -1,8 +1,9 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
 import { Button } from 'reactstrap'
 import studentData from '../../../data/studentData.json';
 import Cell from './Cell.jsx';
+import FormModal from './FormModal.jsx';
 
 const Forms = styled.section`
   display: flex;
@@ -33,16 +34,22 @@ const CellsContainer = styled.div`
   }
 `
 
-const App = () => (
-  <Fragment>
-    <Forms>
-      <Button className="m-4" color="success">Submit Practice</Button>
-      <Button className="m-4" color="success">Purchase Pets</Button>
-    </Forms>
-    <section>
-      <Caption>Students</Caption>
-      <CellsContainer>
-        {studentData.students.map((student) => (
+const App = () => {
+
+  const [modal, setModal] = useState(false);
+  
+  const toggle = () => setModal(!modal);
+
+  return (
+    <Fragment>
+      <Forms>
+        <Button className="m-4" color="success" onClick={toggle}>Submit Practice</Button>
+        <Button className="m-4" color="success">Purchase Pets</Button>
+      </Forms>
+      <section>
+        <Caption>Students</Caption>
+        <CellsContainer>
+          {studentData.students.map((student) => (
             <Cell
               name={student.name}
               image={student.image} 
@@ -50,9 +57,11 @@ const App = () => (
               pets={student.pets}
             />
           ))}
-      </CellsContainer>
-    </section>
-  </Fragment>
-);
+        </CellsContainer>
+      </section>
+      <FormModal toggle={toggle} modal={modal} />
+    </Fragment>
+  )
+};
 
 export default App;
