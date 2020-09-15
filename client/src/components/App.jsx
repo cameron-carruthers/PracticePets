@@ -1,7 +1,7 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Button } from 'reactstrap'
-import studentData from '../../../data/student/studentData.json';
+import axios from 'axios';
 import Cell from './Cell.jsx';
 import FormModal from './FormModal.jsx';
 
@@ -40,6 +40,17 @@ const App = () => {
   
   const toggle = () => setModal(!modal);
 
+  const [studentData, setStudentData] = useState([]);
+
+  useEffect(() => {
+    axios.get('/students')
+      .then((res) => {
+        setStudentData(res.data);
+      }).catch((err) => {
+        console.error(err);
+      })
+  }, []);
+
   return (
     <Fragment>
       <Forms>
@@ -49,17 +60,17 @@ const App = () => {
       <section>
         <Caption>Students</Caption>
         <CellsContainer>
-          {studentData.students.map((student) => (
+          {studentData.length > 0 ? studentData.map((student) => (
             <Cell
               name={student.name}
               image={student.image} 
               points={student.points}
               pets={student.pets}
             />
-          ))}
+          )) : null}
         </CellsContainer>
       </section>
-      <FormModal toggle={toggle} modal={modal} />
+      <FormModal toggle={toggle} modal={modal} studentData={studentData} />
     </Fragment>
   )
 };

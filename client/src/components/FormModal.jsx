@@ -1,22 +1,30 @@
 import React, { useState, Fragment } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup, FormText } from 'reactstrap';
-import studentData from '../../../data/student/studentData.json';
+import axios from 'axios';
 
 const FormModal = (props) => {
   
-  const { toggle, modal } = props;
+  const { toggle, modal, studentData } = props;
 
-  const [name, setName] = useState('');
-  const [practiceAmount, setPractice] = useState('');
-  const [completedAssignments, setCompletedAssignments] = useState('');
+  const [name, setName] = useState('Grae');
+  const [practiceAmount, setPractice] = useState(0);
+  const [completedAssignments, setCompletedAssignments] = useState(false);
   const [comments, setComments] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('name', name);
-    console.log('practiceAmount', practiceAmount);
-    console.log('completedAssignments', completedAssignments);
-    console.log('comments', comments);
+    axios.put('/student', {
+      name,
+      practiceAmount,
+      completedAssignments,
+      comments
+    })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
     toggle();
   };
 
@@ -29,7 +37,7 @@ const FormModal = (props) => {
               <FormGroup>
                 <Label for="name">Name</Label>
                 <Input type="select" id="name" value={name} onChange={(e) => setName(e.target.value)}>
-                  {studentData.students.map((student) => (
+                  {studentData.map((student) => (
                       <option value={student.name}>{student.name}</option>
                     ))}
                 </Input>
@@ -42,14 +50,14 @@ const FormModal = (props) => {
                   value={practiceAmount} 
                   onChange={(e) => setPractice(e.target.value)}
                 >
-                  <option value="0">0 times</option>
-                  <option value="1">1 time</option>
-                  <option value="2">2 times</option>
-                  <option value="3">3 times</option>
-                  <option value="4">4 times</option>
-                  <option value="5">5 times</option>
-                  <option value="6">6 times</option>
-                  <option value="7">7 times</option>
+                  <option value={0}>0 times</option>
+                  <option value={1}>1 time</option>
+                  <option value={2}>2 times</option>
+                  <option value={3}>3 times</option>
+                  <option value={4}>4 times</option>
+                  <option value={5}>5 times</option>
+                  <option value={6}>6 times</option>
+                  <option value={7}>7 times</option>
                 </Input>
               </FormGroup>
               <FormGroup>
