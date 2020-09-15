@@ -7,9 +7,19 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static('client/dist'));
 
-app.put('/student',(req, res) => {
+app.use(express.json());
 
-  let points;
+app.use(express.urlencoded({extended: true}));
+
+app.put('/student',(req, res) => {
+  const { practiceAmount, completedAssignments, comments, name } = req.body;
+  const weeklyPracticeData = {
+    practiceAmount,
+    completedAssignments,
+    comments,
+  }
+  let points = 0;
+
   if (req.body.practiceAmount >= 5) {
     points++;
   }
@@ -20,18 +30,21 @@ app.put('/student',(req, res) => {
     points++;
   }
 
-  const { practiceAmount, completedAssignments, comments } = req.body;
+  Student.updateOne({ name }, { $inc : { points }, $push: { weeklyPracticeData } })
+    .then((data) => {
+      res.send(data);
+    }).catch((err) => {
+      res.status(500).send();
+    })
+});
 
-  const weeklyPracticeData = {
-    practiceAmount,
-    completedAssignments,
-    comments,
-  }
-
-  Student.update( {_id: req.body._id},
-    { points, $push: { weeklyPracticeData } },
-    done
-  );
+app.get('/students', (req, res) => {
+  Student.find({})
+    .then((data) => {
+      res.send(data);
+    }).catch((err) => {
+      res.status(500).send()
+    })
 });
 
 app.listen(PORT, () => {
