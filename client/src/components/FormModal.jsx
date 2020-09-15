@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup, FormText } from 'reactstrap';
-import studentData from '../../../data/studentData.json';
+import studentData from '../../../data/student/studentData.json';
 
 const FormModal = (props) => {
   
@@ -27,7 +27,7 @@ const FormModal = (props) => {
             <ModalHeader toggle={toggle}>Submit Weekly Practice</ModalHeader>
             <ModalBody>
               <FormGroup>
-                <Label for="name">Select</Label>
+                <Label for="name">Name</Label>
                 <Input type="select" id="name" value={name} onChange={(e) => setName(e.target.value)}>
                   {studentData.students.map((student) => (
                       <option value={student.name}>{student.name}</option>
@@ -60,8 +60,8 @@ const FormModal = (props) => {
                   value={completedAssignments} 
                   onChange={(e) => setCompletedAssignments(e.target.value)}
                 >
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
+                  <option value={true}>Yes</option>
+                  <option value={false}>No</option>
                 </Input>
               </FormGroup>
               <FormGroup>

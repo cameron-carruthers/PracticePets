@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import avatar from '../assets/avatars/heisenberg.png'
 
 const Container = styled.div`
   display: grid;
@@ -12,11 +13,11 @@ const Container = styled.div`
   }
 `
 
-const Image = styled.div`
+const Image = styled.img`
   width: 60px;
   height: 60px;
-  background: black;
   border-radius: 10px;
+  background: black;
 `
 
 const Student = styled.div`
@@ -31,11 +32,11 @@ const Name = styled.div`
 
 const Cell = (props) => (
   <Container>
-    <Image image={props.image}></Image>
+    <Image src={require(`../assets/avatars/${props.image}`).default} alt="avatar" />
     <Student>
       <Name>{props.name}</Name>
       <div>{props.points} points</div>
-      <div>{props.pets} pets</div>
+      <div>{props.pets.length} pets</div>
     </Student>
   </Container>
 );

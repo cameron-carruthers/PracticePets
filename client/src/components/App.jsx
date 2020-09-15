@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import styled from 'styled-components';
 import { Button } from 'reactstrap'
-import studentData from '../../../data/studentData.json';
+import studentData from '../../../data/student/studentData.json';
 import Cell from './Cell.jsx';
 import FormModal from './FormModal.jsx';
 

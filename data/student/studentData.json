@@ -1,0 +1,81 @@
+{
+  "students": [
+    {
+      "name": "Grae",
+      "image": "heisenberg.png",
+      "points": 0,
+      "pets": [],
+      "weeklyPracticeData": []
+    },
+    {
+      "name": "Baylee",
+      "image": "avatar.png",
+      "points": 0,
+      "pets": [],
+      "weeklyPracticeData": []
+    },
+    {
+      "name": "Marshall",
+      "image": "avatar-1.png",
+      "points": 0,
+      "pets": [],
+      "weeklyPracticeData": []
+    },
+    {
+      "name": "Veera",
+      "image": "avatar-2.png",
+      "points": 0,
+      "pets": [],
+      "weeklyPracticeData": []
+    },
+    {
+      "name": "Jed",
+      "image": "boy.png",
+      "points": 0,
+      "pets": [],
+      "weeklyPracticeData": []
+    },
+    {
+      "name": "Darren",
+      "image": "boy-1.png",
+      "points": 0,
+      "pets": [],
+      "weeklyPracticeData": []
+    },
+    {
+      "name": "Bella",
+      "image": "boy-2.png",
+      "points": 0,
+      "pets": [],
+      "weeklyPracticeData": []
+    },
+    {
+      "name": "Steph",
+      "image": "boy-3.png",
+      "points": 0,
+      "pets": [],
+      "weeklyPracticeData": []
+    },
+    {
+      "name": "Sammy",
+      "image": "boy-4.png",
+      "points": 0,
+      "pets": [],
+      "weeklyPracticeData": []
+    },
+    {
+      "name": "Erin",
+      "image": "boy-5.png",
+      "points": 0,
+      "pets": [],
+      "weeklyPracticeData": []
+    },
+    {
+      "name": "Naani",
+      "image": "catwoman.png",
+      "points": 0,
+      "pets": [],
+      "weeklyPracticeData": []
+    }
+  ]
+}
