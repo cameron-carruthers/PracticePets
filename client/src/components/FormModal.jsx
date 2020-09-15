@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const FormModal = (props) => {
   
-  const { toggle, modal, studentData } = props;
+  const { toggle, modal, studentData, retrieveStudentData } = props;
 
   const [name, setName] = useState('Grae');
   const [practiceAmount, setPractice] = useState(0);
@@ -21,11 +21,12 @@ const FormModal = (props) => {
     })
     .then((res) => {
       console.log(res);
+      retrieveStudentData();
+      toggle();
     })
     .catch((err) => {
       console.error(err);
     });
-    toggle();
   };
 
   return (

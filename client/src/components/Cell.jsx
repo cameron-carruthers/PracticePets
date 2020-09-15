@@ -36,7 +36,7 @@ const Cell = (props) => (
     <Student>
       <Name>{props.name}</Name>
       <div>{props.points} points</div>
-      <div>{props.pets.length} pets</div>
+      {/* <div>{props.pets.length} pets</div> */}
     </Student>
   </Container>
 );

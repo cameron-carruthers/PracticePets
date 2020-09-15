@@ -4,6 +4,7 @@ import { Button } from 'reactstrap'
 import axios from 'axios';
 import Cell from './Cell.jsx';
 import FormModal from './FormModal.jsx';
+import PetDisplay from './PetDisplay.jsx';
 
 const Forms = styled.section`
   display: flex;
@@ -42,21 +43,26 @@ const App = () => {
 
   const [studentData, setStudentData] = useState([]);
 
-  useEffect(() => {
+  const retrieveStudentData = () => {
     axios.get('/students')
-      .then((res) => {
-        setStudentData(res.data);
-      }).catch((err) => {
-        console.error(err);
-      })
+    .then((res) => {
+      setStudentData(res.data);
+    }).catch((err) => {
+      console.error(err);
+    })
+  }
+
+  useEffect(() => {
+    retrieveStudentData();
   }, []);
 
   return (
     <Fragment>
       <Forms>
         <Button className="m-4" color="success" onClick={toggle}>Submit Practice</Button>
-        <Button className="m-4" color="success">Purchase Pets</Button>
+        {/* <Button className="m-4" color="success">Purchase Pets</Button> */}
       </Forms>
+      <PetDisplay pets={studentData.pets}/>
       <section>
         <Caption>Students</Caption>
         <CellsContainer>
@@ -70,7 +76,12 @@ const App = () => {
           )) : null}
         </CellsContainer>
       </section>
-      <FormModal toggle={toggle} modal={modal} studentData={studentData} />
+      <FormModal 
+        toggle={toggle} 
+        modal={modal} 
+        studentData={studentData} 
+        retrieveStudentData={retrieveStudentData}
+      />
     </Fragment>
   )
 };
