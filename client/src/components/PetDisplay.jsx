@@ -18,6 +18,9 @@ const ImageBackground = styled.section`
   margin: 20px auto;
   margin-bottom: 75px;
   text-align: center;
+  background-image: url(${require('../assets/pets/scene.png').default});
+  background-size: cover;
+  border: 2px black solid;
 `
 const PetDisplay = (props) => (
   <div>
