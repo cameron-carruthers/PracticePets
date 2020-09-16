@@ -35,7 +35,7 @@ const StudentList = (props) => (
           image={student.image} 
           points={student.points}
           pets={student.pets}
-          viewPets={props.viewPets}
+          setView={props.setView}
         />
       ))}
     </CellsContainer>

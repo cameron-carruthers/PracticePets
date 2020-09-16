@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use(express.urlencoded({extended: true}));
 
-app.put('/student',(req, res) => {
+app.put('/practice',(req, res) => {
   const { practiceAmount, completedAssignments, comments, name } = req.body;
   const weeklyPracticeData = {
     practiceAmount,
@@ -21,16 +21,28 @@ app.put('/student',(req, res) => {
   let points = 0;
 
   if (req.body.practiceAmount >= 5) {
-    points++;
+    points+=1;
   }
-  if (req.body.practiceAmount === 7) {
-    points++;
+  if (req.body.practiceAmount == 7) {
+    points+=1;
   }
   if (req.body.completedAssignments) {
-    points++;
+    points+=1;
   }
 
   Student.updateOne({ name }, { $inc : { points }, $push: { weeklyPracticeData } })
+    .then((data) => {
+      res.send(data);
+    }).catch((err) => {
+      res.status(500).send();
+    })
+});
+
+app.put('/buy-pet',(req, res) => {
+  const {  name, points, pet } = req.body;
+  console.log('pet', pet)
+
+  Student.updateOne({ name }, { points, $push: { pets: pet } })
     .then((data) => {
       res.send(data);
     }).catch((err) => {

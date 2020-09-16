@@ -32,12 +32,12 @@ const Name = styled.div`
 `
 
 const Cell = (props) => (
-  <Container onClick={props.viewPets}>
+  <Container onClick={() => {props.setView('viewPets')}}>
     <Image src={require(`../assets/avatars/${props.image}`).default} alt="avatar" />
     <Student>
       <Name>{props.name}</Name>
       <div>{props.points} points</div>
-      {/* <div>{props.pets.length} pets</div> */}
+      <div>{props.pets.length} pets</div>
     </Student>
   </Container>
 );

@@ -38,7 +38,7 @@ const Card = (props) => (
     ? <WideImage src={require(`../assets/pets/${props.pet}.png`).default} alt={props.pet} /> 
     : <Image src={require(`../assets/pets/${props.pet}.png`).default} alt={props.pet} />}
     <Price>Price: 5 points</Price>
-    <Button color="success" className="mt-2">Buy This Pet</Button>
+    <Button color="success" className="mt-2" onClick={() => { props.toggle(props.pet) }}>Buy This Pet</Button>
   </Background>
 )
 
