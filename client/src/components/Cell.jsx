@@ -7,6 +7,7 @@ const Container = styled.div`
   grid-template-columns: 60px auto;
   grid-gap: 25px;
   align-items: center;
+  cursor: pointer;
 
   @media (max-width: 600px) {
     grid-template-columns: 50px auto;
@@ -31,7 +32,7 @@ const Name = styled.div`
 `
 
 const Cell = (props) => (
-  <Container>
+  <Container onClick={props.viewPets}>
     <Image src={require(`../assets/avatars/${props.image}`).default} alt="avatar" />
     <Student>
       <Name>{props.name}</Name>

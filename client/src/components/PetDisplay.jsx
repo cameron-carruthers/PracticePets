@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Caption = styled.h2`
+const Title = styled.h2`
   text-align: center;
   margin: 20px auto;
 `
@@ -11,7 +11,7 @@ const Image = styled.img`
   margin: 0px 15px;
 `
 
-const ImageBackground = styled.section`
+const ImageBackground = styled.div`
   width: 800px;
   height: 600px;
   background: black;
@@ -21,10 +21,11 @@ const ImageBackground = styled.section`
   background-image: url(${require('../assets/pets/scene.png').default});
   background-size: cover;
   border: 2px black solid;
+  border-radius: 30px;
 `
 const PetDisplay = (props) => (
-  <div>
-    <Caption>Cameron's Pets</Caption>
+  <section>
+    <Title>Cameron's Pets</Title>
     <ImageBackground>
       <Image src={require('../assets/pets/bear.png').default} alt='bear' />
       <Image src={require('../assets/pets/bear.png').default} alt='bear' />
@@ -47,7 +48,7 @@ const PetDisplay = (props) => (
       <Image src={require('../assets/pets/bear.png').default} alt='bear' />
       <Image src={require('../assets/pets/bear.png').default} alt='bear' />
     </ImageBackground>
-  </div>
+  </section>
 );
 
 export default PetDisplay;
