@@ -30,6 +30,7 @@ const StudentList = (props) => (
     <CellsContainer>
       {props.studentData.map((student) => (
         <Cell
+          key={Math.random()}
           name={student.name}
           image={student.image} 
           points={student.points}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from './Card.jsx';
 import styled from 'styled-components';
 
@@ -14,22 +14,20 @@ const CardContainer = styled.div`
   max-width: 1000px;
   margin: 10px auto;
 `
-const BuyPets = () => (
-  <section>
-    <Heading>Pets for Sale</Heading>
-    <CardContainer>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-    </CardContainer>
-  </section>
-);
+const BuyPets = () => {
+
+  const [pets] = useState(["bear", "black-cat", "bunny", "chick", "dog", "frog", "giraffe", "hedgehog", "hippo", "horse", "koala", "lion", "monkey", "owl", "penguin", "pig", "sheep", "tiger", "turtle", "white-cat"]);
+
+  return (
+    <section>
+      <Heading>Pets for Sale</Heading>
+      <CardContainer>
+        {pets.map((pet) => (
+          <Card pet={pet} key={Math.random()}/>
+        ))}
+      </CardContainer>
+    </section> 
+  )
+};
 
 export default BuyPets;

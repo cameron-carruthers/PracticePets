@@ -39,7 +39,7 @@ const FormModal = (props) => {
                 <Label for="name">Name</Label>
                 <Input type="select" id="name" value={name} onChange={(e) => setName(e.target.value)}>
                   {studentData.map((student) => (
-                      <option value={student.name}>{student.name}</option>
+                      <option value={student.name} key={student._id}>{student.name}</option>
                     ))}
                 </Input>
               </FormGroup>
