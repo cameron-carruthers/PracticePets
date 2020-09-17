@@ -32,9 +32,10 @@ const PurchasePetsForm = (props) => (
             ))}
         </Input>
       </FormGroup>
-      <p>You have <Alert>{props.pointsForCurrentStudent} points</Alert></p>
+      {props.name !== 'Choose a name'? <p>You have <Alert>{props.pointsForCurrentStudent} points</Alert></p> : null}
       <p>This pet costs <Alert>5 points</Alert></p>
-      {props.pointsForCurrentStudent >= 5 ? <Success>You have enough points to buy this pet!</Success> 
+      {props.name === 'Choose a name' ? null :
+      props.pointsForCurrentStudent >= 5 ? <Success>You have enough points to buy this pet!</Success> 
       : <Alert>You do have enough points to buy this pet!</Alert>}
     </Form>
   </div>

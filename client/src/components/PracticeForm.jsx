@@ -1,8 +1,18 @@
 import React from 'react';
 import { Input, Label, Form, FormGroup } from 'reactstrap';
+import styled from 'styled-components';
+
+const Explanation = styled.h3`
+  font-size: 18px;
+`
 
 const PracticeForm = (props) => (
   <Form>
+    <Explanation>How to earn points</Explanation>
+    <p>- Earn 1 point for practicing 5 times</p>
+    <p>- Earn 1 more point for practicing 7 times</p>
+    <p>- Earn 1 point for practicing all assigned pieces at least once</p>
+    <hr />
     <FormGroup>
       <Label for="name">Name</Label>
       <Input type="select" id="name" value={props.name} onChange={(e) => props.setName(e.target.value)}>
