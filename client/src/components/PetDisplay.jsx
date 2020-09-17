@@ -23,40 +23,18 @@ const ImageBackground = styled.div`
   border: 2px black solid;
   border-radius: 30px;
 `
-const PetDisplay = (props) => (
-  <section>
-    <Title>Cameron's Pets</Title>
-    <ImageBackground>
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-      <Image src={require('../assets/pets/bear.png').default} alt='bear' />
-    </ImageBackground>
-  </section>
-);
+const PetDisplay = (props) => {
+  
+  return (
+    <section>
+      <Title>{props.name}'s Pets</Title>
+      <ImageBackground>
+        {props.pets.map((pet) => (
+          <Image src={require(`../assets/pets/${pet}.png`).default} alt={pet} />
+        ))}
+      </ImageBackground>
+    </section> 
+  )
+};
 
 export default PetDisplay;
-
-// const PetDisplay = (props) => (
-//   <section>
-//     {props.pets.map((pet) => {
-//       <Image src={require(`../assets/pets/${pet.image}`).default} alt={pet.image} />
-//     })}
-//   </section>
-// );

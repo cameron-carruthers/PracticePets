@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import axios from 'axios';
 import PracticeForm from './PracticeForm.jsx';
 import PurchasePetsForm from './PurchasePetsForm.jsx';
@@ -24,6 +24,10 @@ const FormModal = (props) => {
     })
     .then((res) => {
       console.log(res);
+      setName('Choose a name')
+      setPractice('Select the amount of times you practiced this week')
+      setCompletedAssignments('Select Yes or No')
+      setComments('')
       retrieveStudentData();
       toggle();
     })
@@ -41,7 +45,9 @@ const FormModal = (props) => {
     })
     .then((res) => {
       console.log(res);
-      setPointsForCurrentStudent(pointsForCurrentStudent - 5);
+      setName('Choose a name')
+      setPointsForCurrentStudent(0);
+      retrieveStudentData();
       toggle();
     })
     .catch((err) => {
@@ -61,7 +67,7 @@ const FormModal = (props) => {
 
   return (
       <Fragment>
-        <Modal isOpen={modal} toggle={toggle} unmountOnClose={false}>
+        <Modal isOpen={modal} toggle={toggle} unmountOnClose={true}>
         {props.form === 'buyPets' ? <ModalHeader toggle={toggle}>Buy a New Pet</ModalHeader>
         : <ModalHeader toggle={toggle}>Submit Weekly Practice</ModalHeader>}
           <ModalBody>

@@ -2,7 +2,6 @@ import React, { Fragment, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Button } from 'reactstrap'
 import axios from 'axios';
-import Cell from './Cell.jsx';
 import FormModal from './FormModal.jsx';
 import PetDisplay from './PetDisplay.jsx';
 import BuyPets from './BuyPets.jsx'
@@ -19,6 +18,8 @@ const App = () => {
   const [view, setView] = useState(null);
   const [studentData, setStudentData] = useState([]);
   const [currentPet, setCurrentPet] = useState(null);
+  const [currentStudent, setCurrentStudent] = useState(null);
+  const [petsToView, setPetsToView] = useState(null);
   const [form, setForm] = useState(null);
   
   const toggle = (pet) => {
@@ -44,20 +45,6 @@ const App = () => {
     })
   }
 
-  // const buyPets = (e) => {
-  //   e.preventDefault();
-  //   setView('buyPets');
-  // }
-
-  // const viewPets = (e) => {
-  //   e.preventDefault();
-  //   setView('viewPets');
-  // }
-
-  // const setHomeView = () => {
-  //   setView('home');
-  // }
-
   useEffect(() => {
     retrieveStudentData();
   }, [modal]);
@@ -69,8 +56,13 @@ const App = () => {
         <Button className="m-4" color="success" onClick={() => {setView('buyPets') }}>Purchase Pets</Button>
       </Forms>
       {view === 'buyPets' ? <BuyPets toggle={toggle}/> : null}
-      {view === 'viewPets' ? <PetDisplay pets={studentData.pets}/> : null}
-      <StudentList studentData={studentData} setView={setView}/>
+      {view === 'viewPets' ? <PetDisplay pets={petsToView} name={currentStudent}/> : null}
+      <StudentList 
+        studentData={studentData} 
+        setView={setView} 
+        setPetsToView={setPetsToView}
+        setCurrentStudent={setCurrentStudent}
+      />
       <FormModal 
         toggle={toggle} 
         modal={modal} 

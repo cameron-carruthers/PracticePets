@@ -4,6 +4,11 @@ import Cell from './Cell.jsx';
 
 const Caption = styled.h2`
   text-align: center;
+`
+
+const SubCaption = styled.h3`
+  text-align: center;
+  font-size: 20px;
   margin-bottom: 20px;
 `
 
@@ -27,6 +32,7 @@ const CellsContainer = styled.div`
 const StudentList = (props) => (
   <section>
     <Caption>Students</Caption>
+    <SubCaption>Click a name to view that student's pets</SubCaption>
     <CellsContainer>
       {props.studentData.map((student) => (
         <Cell
@@ -36,6 +42,8 @@ const StudentList = (props) => (
           points={student.points}
           pets={student.pets}
           setView={props.setView}
+          setPetsToView={props.setPetsToView}
+          setCurrentStudent={props.setCurrentStudent}
         />
       ))}
     </CellsContainer>

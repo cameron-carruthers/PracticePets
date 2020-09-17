@@ -13,6 +13,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.put('/practice',(req, res) => {
   const { practiceAmount, completedAssignments, comments, name } = req.body;
+  console.log('completedAssignments', completedAssignments)
   const weeklyPracticeData = {
     practiceAmount,
     completedAssignments,
@@ -26,7 +27,7 @@ app.put('/practice',(req, res) => {
   if (req.body.practiceAmount == 7) {
     points+=1;
   }
-  if (req.body.completedAssignments) {
+  if (req.body.completedAssignments === 'true') {
     points+=1;
   }
 
@@ -40,7 +41,6 @@ app.put('/practice',(req, res) => {
 
 app.put('/buy-pet',(req, res) => {
   const {  name, points, pet } = req.body;
-  console.log('pet', pet)
 
   Student.updateOne({ name }, { points, $push: { pets: pet } })
     .then((data) => {
