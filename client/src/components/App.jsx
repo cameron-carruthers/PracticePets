@@ -23,16 +23,13 @@ const App = () => {
   const [form, setForm] = useState(null);
   
   const toggle = (pet) => {
-    console.log('toggle!', pet)
     if (typeof pet === 'string') {
       setCurrentPet(pet);
       setForm('buyPets');
     } else {
       setForm('submitPractice')
     }
-    console.log('modal before', modal)
     setModal(!modal);
-    console.log('modal after', modal)
   }
 
   const retrieveStudentData = () => {

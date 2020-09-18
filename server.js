@@ -13,7 +13,6 @@ app.use(express.urlencoded({extended: true}));
 
 app.put('/practice',(req, res) => {
   const { practiceAmount, completedAssignments, comments, name } = req.body;
-  console.log('completedAssignments', completedAssignments)
   const weeklyPracticeData = {
     practiceAmount,
     completedAssignments,

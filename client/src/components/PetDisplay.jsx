@@ -12,7 +12,8 @@ const Image = styled.img`
 `
 
 const ImageBackground = styled.div`
-  width: 800px;
+  max-width: 800px;
+  width: 90%;
   height: 600px;
   background: black;
   margin: 20px auto;
@@ -30,7 +31,7 @@ const PetDisplay = (props) => {
       <Title>{props.name}'s Pets</Title>
       <ImageBackground>
         {props.pets.map((pet) => (
-          <Image src={require(`../assets/pets/${pet}.png`).default} alt={pet} />
+          <Image src={require(`../assets/pets/${pet}.png`).default} alt={pet} key={Math.random()}/>
         ))}
       </ImageBackground>
     </section> 

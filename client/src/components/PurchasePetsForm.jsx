@@ -5,6 +5,10 @@ import styled from 'styled-components';
 const Image = styled.img`
   margin: 5px auto;
   text-align: center;
+
+  @media (max-width: 600px) {
+    width: 250px;
+  }
 `
 
 const Alert = styled.span`
