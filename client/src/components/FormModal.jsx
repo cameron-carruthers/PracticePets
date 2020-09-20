@@ -55,6 +55,15 @@ const FormModal = (props) => {
     });
   }
 
+  const closeForm = () => {
+    setName('Choose a name');
+    setPractice('Select the amount of times you practiced this week');
+    setCompletedAssignments('Select Yes or No');
+    setComments('');
+    setPointsForCurrentStudent(0);
+    toggle();
+  }
+
   const findPointsForGivenName = (name) => {
     for (let i = 0; i < studentData.length; i++) {
       if (studentData[i].name === name) {
@@ -99,7 +108,7 @@ const FormModal = (props) => {
               : null
               : <Button onClick={submitPractice} color="success">Submit</Button>}
               {' '}
-              <Button onClick={toggle}>Cancel</Button>
+              <Button onClick={closeForm}>Cancel</Button>
           </ModalFooter>
         </Modal>
       </Fragment>
