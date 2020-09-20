@@ -34,7 +34,7 @@ const Price = styled.p`
 `
 const Card = (props) => (
   <Background>
-    {props.pet === 'turtle' || props.pet === 'frog' || props.pet === 'horse'
+    {props.pet === 'turtle' || props.pet === 'frog' || props.pet === 'horse' || props.pet === 'monkey'
     ? <WideImage src={require(`../assets/pets/${props.pet}.png`).default} alt={props.pet} /> 
     : <Image src={require(`../assets/pets/${props.pet}.png`).default} alt={props.pet} />}
     <Price>Price: 5 points</Price>
