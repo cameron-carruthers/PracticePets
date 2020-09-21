@@ -20,7 +20,7 @@ I wanted to build a fun practice incentive for the online piano classes I teach.
 ![Buy Pet Form gif](https://github.com/cameron-carruthers/practice-tracker/blob/master/buy-pet-form.gif
 )
 
-- Submit the pets each student has purchased
+- View the pets each student has purchased
 ![View Pets gif](https://github.com/cameron-carruthers/practice-tracker/blob/master/view-pets.gif
 )
 
