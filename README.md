@@ -4,7 +4,7 @@
 
 ## Motivation
 
-I wanted to build a fun practice incentive for the online piano classes I am teaching on Saturday mornings this year.
+I wanted to build a fun practice incentive for the online piano classes I teach.
 
 ## Features
 
