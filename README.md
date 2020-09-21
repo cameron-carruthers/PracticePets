@@ -8,7 +8,8 @@ I wanted to build a fun practice incentive for the online piano classes I teach.
 
 ## Features
 
-- Submit practice
+### Submit practice
+
 ![Submit Practice gif](https://github.com/cameron-carruthers/practice-tracker/blob/master/submit-practice-form.gif
 )
 
