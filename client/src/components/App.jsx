@@ -35,7 +35,6 @@ const App = () => {
   const retrieveStudentData = () => {
     axios.get('/students')
     .then((res) => {
-      console.log('res.data', res.data)
       setStudentData(res.data);
     }).catch((err) => {
       console.error(err);

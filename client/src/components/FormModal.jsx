@@ -23,7 +23,6 @@ const FormModal = (props) => {
       comments
     })
     .then((res) => {
-      console.log(res);
       setName('Choose a name')
       setPractice('Select the amount of times you practiced this week')
       setCompletedAssignments('Select Yes or No')
@@ -44,7 +43,6 @@ const FormModal = (props) => {
       pet: props.currentPet
     })
     .then((res) => {
-      console.log(res);
       setName('Choose a name')
       setPointsForCurrentStudent(0);
       retrieveStudentData();
