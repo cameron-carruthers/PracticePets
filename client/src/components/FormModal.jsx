@@ -6,7 +6,7 @@ import PurchasePetsForm from './PurchasePetsForm.jsx';
 
 const FormModal = (props) => {
   
-  const { toggle, modal, studentData, retrieveStudentData } = props;
+  const { toggle, modal, studentData, retrieveStudentData, currentPet } = props;
 
   const [name, setName] = useState('Choose a name')
   const [practiceAmount, setPractice] = useState('Select the amount of times you practiced this week');
@@ -80,24 +80,24 @@ const FormModal = (props) => {
           <ModalBody>
             {props.form === 'buyPets' ? 
               <PurchasePetsForm 
-                currentPet={props.currentPet}
+                studentData={studentData}
+                currentPet={currentPet}
                 name={name}
                 setName={setName}
-                studentData={studentData}
                 pointsForCurrentStudent={pointsForCurrentStudent}
                 findPointsForGivenName={findPointsForGivenName}
               />
               :
               <PracticeForm 
-              name={name}
-              practiceAmount={practiceAmount}
-              completedAssignments={completedAssignments}
-              comments={comments}
-              setName={setName}
-              setPractice={setPractice}
-              setCompletedAssignments={setCompletedAssignments}
-              setComments={setComments}
               studentData={studentData}
+              name={name}
+              setName={setName}
+              practiceAmount={practiceAmount}
+              setPractice={setPractice}
+              completedAssignments={completedAssignments}
+              setCompletedAssignments={setCompletedAssignments}
+              comments={comments}
+              setComments={setComments}
             />}
           </ModalBody>
           <ModalFooter>

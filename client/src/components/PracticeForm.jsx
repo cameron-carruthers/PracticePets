@@ -2,13 +2,13 @@ import React from 'react';
 import { Input, Label, Form, FormGroup } from 'reactstrap';
 import styled from 'styled-components';
 
-const Explanation = styled.h3`
+const Heading = styled.h3`
   font-size: 18px;
 `
 
 const PracticeForm = (props) => (
   <Form>
-    <Explanation>How to earn points</Explanation>
+    <Heading>How to earn points</Heading>
     <p>- Earn 1 point for practicing 5 times</p>
     <p>- Earn 1 more point for practicing 7 times</p>
     <p>- Earn 1 point for practicing all assigned pieces at least once</p>
@@ -18,7 +18,6 @@ const PracticeForm = (props) => (
       <Input type="select" id="name" value={props.name} onChange={(e) => props.setName(e.target.value)}>
         <option value="">Choose a name</option>
         {props.studentData.map((student) => (
-
             <option value={student.name} key={student._id}>{student.name}</option>
           ))}
       </Input>

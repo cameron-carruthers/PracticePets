@@ -7,7 +7,7 @@ import PetDisplay from './PetDisplay.jsx';
 import BuyPets from './BuyPets.jsx'
 import StudentList from './StudentList.jsx'
 
-const Forms = styled.section`
+const Buttons = styled.section`
   display: flex;
   justify-content: center;
 `
@@ -47,10 +47,10 @@ const App = () => {
 
   return (
     <Fragment>
-      <Forms>
+      <Buttons>
         <Button className="m-4" color="success" onClick={toggle}>Submit Practice</Button>
         <Button className="m-4" color="success" onClick={() => {setView('buyPets') }}>Purchase Pets</Button>
-      </Forms>
+      </Buttons>
       {view === 'buyPets' ? <BuyPets toggle={toggle}/> : null}
       {view === 'viewPets' ? <PetDisplay pets={petsToView} name={currentStudent}/> : null}
       <StudentList 
