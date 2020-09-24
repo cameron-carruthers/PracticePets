@@ -37,7 +37,7 @@ const Cell = (props) => (
     props.setPetsToView(props.pets);
     props.setCurrentStudent(props.name);
     window.scrollTo({
-      top: 0,
+      top: 800,
       behavior: "smooth"
     });
   }}>

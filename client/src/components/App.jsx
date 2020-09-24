@@ -1,12 +1,40 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import styled from 'styled-components';
+import React, { Fragment, useState, useEffect, useRef } from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
 import { Button } from 'reactstrap'
 import axios from 'axios';
 import FormModal from './FormModal.jsx';
 import PetDisplay from './PetDisplay.jsx';
 import BuyPets from './BuyPets.jsx'
 import StudentList from './StudentList.jsx'
+import Hero from './Hero.jsx';
 
+const GlobalStyle = createGlobalStyle`
+  html, body {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #f2f3f4 !important;
+  }
+  h1, footer {
+    flex: inline;
+    width: 290px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  button {
+    height: 44px;
+    margin: 20px;
+    background: white;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 17px;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit
+    box-shadow: none;
+  }
+`
 const Buttons = styled.section`
   display: flex;
   justify-content: center;
@@ -21,6 +49,14 @@ const App = () => {
   const [currentStudent, setCurrentStudent] = useState(null);
   const [petsToView, setPetsToView] = useState(null);
   const [form, setForm] = useState(null);
+
+  const shopForPets = () => {
+    setView('buyPets');
+    window.scrollTo({
+      top: 800,
+      behavior: "smooth"
+    });
+  }
   
   const toggle = (pet) => {
     if (typeof pet === 'string') {
@@ -47,11 +83,9 @@ const App = () => {
 
   return (
     <Fragment>
-      <Buttons>
-        <Button className="m-4" color="success" onClick={toggle}>Submit Practice</Button>
-        <Button className="m-4" color="success" onClick={() => {setView('buyPets') }}>Purchase Pets</Button>
-      </Buttons>
-      {view === 'buyPets' ? <BuyPets toggle={toggle}/> : null}
+      <GlobalStyle />
+      <Hero toggle={toggle} shopForPets={shopForPets}/>
+      {view === 'buyPets' ? <BuyPets toggle={toggle} /> : null}
       {view === 'viewPets' ? <PetDisplay pets={petsToView} name={currentStudent}/> : null}
       <StudentList 
         studentData={studentData} 
@@ -70,6 +104,9 @@ const App = () => {
         setForm={setForm}
         form={form}
       />
+      <footer>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+      </footer>
     </Fragment>
   )
 };
