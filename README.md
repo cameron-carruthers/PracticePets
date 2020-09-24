@@ -13,14 +13,9 @@ I wanted to build a fun practice incentive for the online piano classes I teach.
 ![Submit Practice gif](https://github.com/cameron-carruthers/practice-tracker/blob/master/submit-practice-form.gif
 )
 
-### View pets available for purchase
+### View and purchase pets
 
 ![Buy Pets Practice gif](https://github.com/cameron-carruthers/practice-tracker/blob/master/buy-pets.gif
-)
-
-### Fill out form to buy a new pet
-
-![Buy Pet Form gif](https://github.com/cameron-carruthers/practice-tracker/blob/master/buy-pet-form.gif
 )
 
 ### View the pets each student has purchased
