@@ -25,6 +25,7 @@ I wanted to build a fun practice incentive for the online piano classes I teach.
 
 ## Technologies Used
 
+- Figma for Wireframing and Mockups
 - React
 - Node
 - Express
