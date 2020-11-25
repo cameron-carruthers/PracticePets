@@ -2,6 +2,9 @@
 
 > PracticePets is an incentive for music students to practice their music each week.
 
+Note: This app is currently being redesigned.  The most recent Figma mockups can be found here:
+https://www.figma.com/file/ps6UU7Dpjj9qMvbPkZf7cX/PracticePets-Mockups?node-id=0%3A1
+
 ## Motivation
 
 I wanted to build a fun practice incentive for the online piano classes I teach.
@@ -13,14 +16,9 @@ I wanted to build a fun practice incentive for the online piano classes I teach.
 ![Submit Practice gif](https://github.com/cameron-carruthers/practice-tracker/blob/master/submit-practice-form.gif
 )
 
-### View pets available for purchase
+### View and purchase pets
 
 ![Buy Pets Practice gif](https://github.com/cameron-carruthers/practice-tracker/blob/master/buy-pets.gif
-)
-
-### Fill out form to buy a new pet
-
-![Buy Pet Form gif](https://github.com/cameron-carruthers/practice-tracker/blob/master/buy-pet-form.gif
 )
 
 ### View the pets each student has purchased
@@ -30,6 +28,7 @@ I wanted to build a fun practice incentive for the online piano classes I teach.
 
 ## Technologies Used
 
+- Figma for Wireframing and Mockups
 - React
 - Node
 - Express
