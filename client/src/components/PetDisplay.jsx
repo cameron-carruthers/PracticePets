@@ -24,16 +24,39 @@ const ImageBackground = styled.div`
   border: 2px black solid;
   border-radius: 30px;
 `
-const PetDisplay = (props) => {
-  
+
+const ImageBackgroundContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+const PetDisplay = ({pets, name}) => {
+
+  const createScenes = () => {
+    const scenes = [];
+
+    while (pets.length > 0) {
+      let nextSixPets = pets.slice(0,6);
+      scenes.push(
+        <ImageBackground>
+          {nextSixPets.map((pet) => (
+            <Image src={require(`../assets/pets/${pet}.png`).default} alt={pet} key={Math.random()}/>
+          ))}
+        </ImageBackground>
+      )
+      pets = pets.slice(6);
+    }
+
+    return (
+      <ImageBackgroundContainer>
+        {scenes}
+      </ImageBackgroundContainer>
+    )
+  }
+
   return (
     <section>
-      <Title>{props.name}'s Pets</Title>
-      <ImageBackground>
-        {props.pets.map((pet) => (
-          <Image src={require(`../assets/pets/${pet}.png`).default} alt={pet} key={Math.random()}/>
-        ))}
-      </ImageBackground>
+      <Title>{name}'s Pets</Title>
+      {createScenes()}
     </section> 
   )
 };
