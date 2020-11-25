@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {TertiaryButton} from './Buttons';
 
 const IntroContainer = styled.div`
   display: flex;
@@ -7,53 +8,54 @@ const IntroContainer = styled.div`
   text-align: center;
   align-items: center;
   position: absolute;
-  width: 27%;
-  height: 31%;
-  left: 50%;
+  width: 29%;
+  height: 33%;
+  left: 52%;
   top: 21%;
 
   @media (max-width: 1100px) {
-    display: none;
+    left: 45%;
   }
 
   @media (max-height: 768px) and (min-width: 568px) {
-    display: block;
     top: 10%;
+  }
+
+  @media (max-height: 400px) {
+    top: 0%;
+    width: 20%;
   }
 `
 
 const PrimaryHeading = styled.h1`
-  font-weight: bold;
-  font-size: 60px;
   text-align: center;
   width: 400px;
   color: white;
 `
 
-const SecondaryHeading = styled.h2`
-  font-weight: bold;
-  font-size: 40px;
+const SecondaryHeading = styled.h3`
   text-align: center;
   width: 300px;
   color: white;
   margin-bottom: 30px;
 `
-
-const Buttons = styled.div`
-  display: flex;
+const PrimaryColor = styled.span`
+  color: #95CB89;
+;
 `
 
-const PrimaryColor = styled.span`
-  color: #5fb14d;
+const ButtonContainer = styled.div`
+  @media (max-height: 600px) {
+    display: none;
+  }
 `
 const Intro = (props) => (
   <IntroContainer>
     <PrimaryHeading>Practice<PrimaryColor>Pets</PrimaryColor></PrimaryHeading>
     <SecondaryHeading>Practice your instrument to earn pets</SecondaryHeading>
-    <Buttons>
-      <button onClick={props.toggle}>Submit Practice</button>
-      <button onClick={() => {props.shopForPets()}}>Purchase Pets</button>
-    </Buttons>
+    <ButtonContainer>
+      <TertiaryButton modifiers="large" onClick={props.toggle}>Submit Practice</TertiaryButton>
+    </ButtonContainer>
   </IntroContainer>
 )
 

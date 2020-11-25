@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button } from 'reactstrap'
+import {PrimaryButton} from './Buttons';
+import {desktopText, mobileText} from '../utils/typography';
 
 const Background = styled.div`
   height: 375px;
@@ -28,9 +29,13 @@ const WideImage = styled.img`
 `
 
 const Price = styled.p`
-  font-size: 20px;
+  font-size: ${desktopText.mainText};
   font-weight: 600;
   margin: 0;
+
+  @media (max-width: 800) {
+    font-size: ${mobileText.mainText};
+  }
 `
 const Card = (props) => (
   <Background>
@@ -38,7 +43,9 @@ const Card = (props) => (
     ? <WideImage src={require(`../assets/pets/${props.pet}.png`).default} alt={props.pet} /> 
     : <Image src={require(`../assets/pets/${props.pet}.png`).default} alt={props.pet} />}
     <Price>Price: 5 points</Price>
-    <Button color="success" className="mt-2" onClick={() => { props.toggle(props.pet) }}>Buy This Pet</Button>
+    <PrimaryButton modifiers="small" onClick={() => { props.toggle(props.pet) }}>
+      Buy This Pet
+    </PrimaryButton>
   </Background>
 )
 

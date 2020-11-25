@@ -27,14 +27,12 @@ const Pet1 = styled.img`
   left: 14%;
   top: 7%;
 
-  @media (max-width: 1100px) {
+  @media (max-height: 768px) and (min-width: 568px) {
     display: none;
   }
 
-  @media (max-height: 768px) and (min-width: 568px) {
-    display: block;
-    height: 27%;
-    width: auto;
+  @media (max-width: 1100px) {
+    display: none;
   }
 `
 const Pet2 = styled.img`
@@ -44,16 +42,37 @@ const Pet2 = styled.img`
   top: 23%;
 
   @media (max-width: 1100px) {
-    top: 25%;
+    left: 20%;
+    width: 20%;
+    top: 15%;
+  }
+
+  @media (max-width: 900px) {
+    top: 10%;
+  }
+
+  @media (max-width: 715px) {
+    top: 20%;
     left: 56%;
     width: 40%;
   }
 
   @media (max-height: 768px) and (min-width: 568px) {
-    left: 26%;
-    top: 23%;
-    width: auto;
-    height: 24%;
+    left: 20%;
+    top: 10%;
+    width: 14%;
+  }
+
+  @media (max-height: 500px) {
+    left: 23%;
+    top: 10%;
+    width: 13%;
+  }
+
+  @media (max-height: 350px) {
+    left: 23%;
+    top: 0;
+    width: 10%;
   }
 `
 
@@ -63,14 +82,17 @@ const Pet3 = styled.img`
   left: 35%;
   top: 6%;
 
+  @media (max-height: 768px) and (min-width: 568px) {
+    display: block;
+  }
+
   @media (max-width: 1100px) {
     display: none;
   }
 
-  @media (max-height: 768px) and (min-width: 568px) {
-    display: block;
-    width: auto;
-    height: 30%;
+  @media (max-height: 500px) {
+    width: 10%;
+    top: 0;
   }
 `
 
