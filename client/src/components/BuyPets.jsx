@@ -11,7 +11,7 @@ const CardContainer = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 10px auto;
 `
 const BuyPets = (props) => {

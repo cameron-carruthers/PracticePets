@@ -1,22 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
 import Cell from './Cell.jsx';
+import { desktopText, mobileText } from '../utils';
 
-const Caption = styled.h2`
+const Caption = styled.h3`
   text-align: center;
 `
 
-const SubCaption = styled.h3`
+const SubCaption = styled.p`
   text-align: center;
-  font-size: 20px;
+  font-size: ${desktopText.mainText};
   margin-bottom: 20px;
+
+  @media (max-width: 600px) {
+    font-size: ${mobileText.mainText};
+  }
 `
 
 const CellsContainer = styled.div`
   max-width: 800px;
   margin: 0 auto 100px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 20px;
   padding: 0 20px;
 
@@ -29,10 +34,15 @@ const CellsContainer = styled.div`
   }
 `
 
+const StudentListContainer = styled.section`
+  margin-left: 20px;
+  margin-top: 100px;
+`
+
 const StudentList = (props) => (
-  <section>
+  <StudentListContainer>
     <Caption>Students</Caption>
-    <SubCaption>Click a name to view that student's pets</SubCaption>
+    <SubCaption>Whose pets do you want to see?</SubCaption>
     <CellsContainer>
       {props.studentData.map((student) => (
         <Cell
@@ -47,7 +57,7 @@ const StudentList = (props) => (
         />
       ))}
     </CellsContainer>
-  </section>
+  </StudentListContainer>
 );
 
 export default StudentList;

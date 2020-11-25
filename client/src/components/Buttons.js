@@ -25,11 +25,13 @@ const Button = styled.button`
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 0.5px inset, rgba(23, 0, 102, 0.2) 0px 20px 40px, rgba(0, 0, 0, 0.1) 0px 1px 3px;
   cursor: pointer;
   transition: background-color 0.2s linear, color 0.2s linear, transform 0.8s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+  margin: 0 20px;
 }
 
   &:hover, &:focus, &:active {
     background: linear-gradient(107.92deg, rgba(159, 77, 177, 0.8) -2.02%, rgba(124, 35, 237, 0.8) 112%), #000000;
     transform: translateY(-2px);
+    color: white;
   }
 
   &:focus {
@@ -73,6 +75,7 @@ export const TertiaryButton = styled(Button)`
   &:hover, &:focus, &:active {
     background: white;
     box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 0.5px inset, rgba(23, 0, 102, 0.3) 0px 40px 80px, rgba(0, 0, 0, 0.3) 0px 10px 30px;
+    color: black;
   }
 
   &:focus {

@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import avatar from '../assets/avatars/heisenberg.png'
+import FemaleAvatar from './FemaleAvatar.svg';
+import { desktopText, mobileText } from '../utils';
 
 const Container = styled.div`
   display: grid;
@@ -14,21 +16,22 @@ const Container = styled.div`
   }
 `
 
-const Image = styled.img`
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
-  background: black;
+const ImageContainer = styled.div`
+  width: 70px;
+  height: 70px;
 `
 
 const Student = styled.div`
-  font-size: 14px;
+  font-size: ${desktopText.mediumText};
   border-bottom: 1px solid rgba(0,0,0,0.1);
   padding: 10px 0;
-`
 
-const Name = styled.div`
-  font-size: 24px;
+  @media (max-width: 600px) {
+    font-size: ${mobileText.mediumText};
+  }
+`
+const Name = styled.h4`
+  margin-bottom: 0;
 `
 
 const Cell = (props) => (
@@ -41,7 +44,9 @@ const Cell = (props) => (
       behavior: "smooth"
     });
   }}>
-    <Image src={require(`../assets/avatars/${props.image}`).default} alt="avatar" />
+    <ImageContainer>
+      <img src={FemaleAvatar} alt="Female Avatar" />
+    </ImageContainer>
     <Student>
       <Name>{props.name}</Name>
       <div>{props.points} points</div>

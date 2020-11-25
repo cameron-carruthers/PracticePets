@@ -96,12 +96,13 @@ const Pet3 = styled.img`
   }
 `
 
-const Hero = (props) => (
+const Hero = ({toggle, returnHome}) => (
   <Heading>
+    <i className="fas fa-home fa-2x" onClick={returnHome}></i>
     <Pet1 src={require('../assets/pets/hippo.png').default}/>
     <Pet2 src={require('../assets/pets/white-cat.png').default}/>
     <Pet3 src={require('../assets/pets/bunny.png').default}/>
-    <Intro toggle={props.toggle} shopForPets={props.shopForPets}/>
+    <Intro toggle={toggle}/>
   </Heading>
 )
 

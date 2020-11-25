@@ -8,10 +8,15 @@ import BuyPets from './BuyPets.jsx'
 import StudentList from './StudentList.jsx'
 import Hero from './Hero.jsx';
 import { GlobalStyle } from '../utils';
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`
 const App = () => {
 
   const [modal, setModal] = useState(false);
-  const [view, setView] = useState(null);
+  const [view, setView] = useState('viewPets');
   const [studentData, setStudentData] = useState([]);
   const [currentPet, setCurrentPet] = useState(null);
   const [currentStudent, setCurrentStudent] = useState(null);
@@ -20,6 +25,14 @@ const App = () => {
 
   const shopForPets = () => {
     setView('buyPets');
+    window.scrollTo({
+      top: 800,
+      behavior: "smooth"
+    });
+  }
+
+  const returnHome = () => {
+    setView('viewPets');
     window.scrollTo({
       top: 800,
       behavior: "smooth"
@@ -52,15 +65,24 @@ const App = () => {
   return (
     <Fragment>
       <GlobalStyle />
-      <Hero toggle={toggle} shopForPets={shopForPets}/>
-      {view === 'buyPets' ? <BuyPets toggle={toggle} /> : null}
-      {view === 'viewPets' ? <PetDisplay pets={petsToView} name={currentStudent}/> : null}
-      <StudentList 
-        studentData={studentData} 
-        setView={setView} 
-        setPetsToView={setPetsToView}
-        setCurrentStudent={setCurrentStudent}
-      />
+      <Hero toggle={toggle} shopForPets={shopForPets} returnHome={returnHome}/>
+      <Wrapper>
+        {view === 'buyPets' ? <BuyPets toggle={toggle} /> : null}
+        {view === 'viewPets' ? <PetDisplay 
+          pets={petsToView} 
+          name={currentStudent} 
+          toggle={toggle}
+          shopForPets={shopForPets}
+          />
+        : null}
+        {view === 'viewPets' ? <StudentList 
+          studentData={studentData} 
+          setView={setView} 
+          setPetsToView={setPetsToView}
+          setCurrentStudent={setCurrentStudent}
+          />
+        : null}
+      </Wrapper>
       <FormModal 
         toggle={toggle} 
         modal={modal} 

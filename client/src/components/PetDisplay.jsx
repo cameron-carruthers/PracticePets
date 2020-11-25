@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Scene from './Scene.svg';
+import {PrimaryButton, SecondaryButton} from './Buttons';
 
 const Title = styled.h2`
   text-align: center;
@@ -36,35 +37,51 @@ const ImageBackgroundContainer = styled.div`
   display: flex;
   flex-direction: column;
 `
-const PetDisplay = ({pets, name}) => {
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
+const PetDisplayWrapper = styled.section`
+  margin-bottom: 100px;
+`
+const PetDisplay = ({pets, name, toggle, shopForPets}) => {
 
   const createScenes = () => {
     const scenes = [];
 
-    while (pets.length > 0) {
-      let nextSixPets = pets.slice(0,5);
-      scenes.push(
-        <ImageBackground>
-          {nextSixPets.map((pet) => (
-            <Image src={require(`../assets/pets/${pet}.png`).default} alt={pet} key={Math.random()}/>
-          ))}
-        </ImageBackground>
-      )
-      pets = pets.slice(5);
+    if (pets) {
+      while (pets.length > 0) {
+        let nextFivePets = pets.slice(0,5);
+        scenes.push(
+          <ImageBackground>
+            {nextFivePets.map((pet) => (
+              <Image src={require(`../assets/pets/${pet}.png`).default} alt={pet} key={Math.random()}/>
+            ))}
+          </ImageBackground>
+        )
+        pets = pets.slice(5);
+      }
+    } else {
+      scenes.push(<ImageBackground />)
     }
 
     return (
       <ImageBackgroundContainer>
         {scenes}
+        <ButtonContainer>
+          <SecondaryButton modifiers="large" onClick={toggle}>Submit Practice</SecondaryButton>
+          <PrimaryButton modifiers="large" onClick={shopForPets}>Purchase Pets</PrimaryButton>
+        </ButtonContainer>
       </ImageBackgroundContainer>
     )
   }
 
   return (
-    <section>
-      <Title>{name}'s Pets</Title>
+    <PetDisplayWrapper>
+      {name ? <Title>{name}'s Pets</Title> : <Title>Welcome to PracticePets</Title>}
       {createScenes()}
-    </section> 
+    </PetDisplayWrapper> 
   )
 };
 

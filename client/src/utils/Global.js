@@ -89,6 +89,12 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 1.25rem;
     }
   }
+
+  i {
+    margin: 20px;
+    color: white;
+    cursor: pointer;
+  }
 `
 
 // h1, footer {

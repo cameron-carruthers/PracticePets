@@ -7,7 +7,7 @@ const Background = styled.div`
   height: 375px;
   width: 230px;
   border-radius: 30px;
-  box-shadow: 1px 1px 1px 1px;
+  box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.25);
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@ const WideImage = styled.img`
 const Price = styled.p`
   font-size: ${desktopText.mainText};
   font-weight: 600;
-  margin: 0;
+  margin: 10px;
 
   @media (max-width: 800) {
     font-size: ${mobileText.mainText};
