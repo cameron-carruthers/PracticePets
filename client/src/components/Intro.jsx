@@ -7,10 +7,19 @@ const IntroContainer = styled.div`
   text-align: center;
   align-items: center;
   position: absolute;
-  width: 390px;
-  height: 327px;
-  left: 720px;
-  top: 222px;
+  width: 27%;
+  height: 31%;
+  left: 50%;
+  top: 21%;
+
+  @media (max-width: 1100px) {
+    display: none;
+  }
+
+  @media (max-height: 768px) and (min-width: 568px) {
+    display: block;
+    top: 10%;
+  }
 `
 
 const PrimaryHeading = styled.h1`
