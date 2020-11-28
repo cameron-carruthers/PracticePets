@@ -13,7 +13,7 @@ const Image = styled.img`
   text-align: center;
 
   @media (max-width: 600px) {
-    width: 250px;
+    width: 200px;
   }
 `
 

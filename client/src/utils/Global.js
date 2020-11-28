@@ -129,6 +129,10 @@ export const GlobalStyle = createGlobalStyle`
     height: 100px;
     margin: 10px 0;
     padding: 10px;
+
+    @media (max-width: 600px) {
+      height: 60px;
+    }
   }
 
   textarea:focus {

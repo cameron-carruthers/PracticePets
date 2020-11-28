@@ -82,9 +82,9 @@ const PracticeForm = ({studentData, toggleModal, retrieveStudentData}) => {
     <form>
       <Heading>Submit Weekly Practice</Heading>
       <SubHeading>How to Earn Points</SubHeading>
-      <Points>Earn 1 point for practicing 5 times</Points>
-      <Points>Earn 1 additional point for practicing 7 times</Points>
-      <Points>Earn 1 point for practicing all assigned pieces</Points>
+      <Points>1 point for practicing 5 times</Points>
+      <Points>1 additional point for practicing 7 times</Points>
+      <Points>1 point for practicing all assigned pieces</Points>
       <label for="name">
         Name
         <Select inputColor={name[1]} value={name[0]} onChange={(e) => setName([e.target.value, 'black'])}>
@@ -95,9 +95,9 @@ const PracticeForm = ({studentData, toggleModal, retrieveStudentData}) => {
         </Select>
       </label>
       <label for="practiceAmount">
-        How many times did you practice this week?
+        How many times did you practice?
         <Select inputColor={practiceAmount[1]} value={practiceAmount[0]} onChange={(e) => setPractice([e.target.value, 'black'])}>
-          <option value="">Select the amount of times you practiced this week</option>
+          <option value="">Select the amount of times</option>
           <option value={0}>0 times</option>
           <option value={1}>1 time</option>
           <option value={2}>2 times</option>
@@ -117,7 +117,7 @@ const PracticeForm = ({studentData, toggleModal, retrieveStudentData}) => {
         </Select>
       </label>
       <label for="comments">
-        Is there anything else you want Miss Cameron to know about your practice this week?
+        Comments for Miss Cameron
         <textarea value={comments} onChange={(e) => setComments(e.target.value)} />
       </label>
       <ButtonContainer>
