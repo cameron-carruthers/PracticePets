@@ -12,16 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.20.0",
-    "bootstrap": "^4.5.2",
     "express": "^4.17.1",
     "mongo-seeding": "^3.4.1",
     "mongoose": "^5.10.5",
     "polished": "^4.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-modal": "^3.12.1",
-    "react-modal-hook": "^3.0.0",
-    "reactstrap": "^8.5.1",
     "styled-components": "^5.2.0",
     "styled-components-modifiers": "^1.2.5"
   },
