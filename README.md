@@ -1,6 +1,6 @@
 # PracticePets
 
-> PracticePets is an incentive for music students to practice their music each week.
+> PracticePets is an incentive for elementary music students to practice their music each week.
 
 Note: This app is currently being redesigned.  The most recent Figma mockups can be found here:
 https://www.figma.com/file/ps6UU7Dpjj9qMvbPkZf7cX/PracticePets-Mockups?node-id=0%3A1
@@ -30,12 +30,13 @@ I wanted to build a fun practice incentive for the online piano classes I teach.
 
 - Figma for Wireframing and Mockups
 - React
+- Styled Components (a CSS-in-JS library)
+- SVG
 - Node
 - Express
 - MongoDB
 - Mongoose
 - Reactstrap
-- Styled Components (a CSS-in-JS library)
 
 ## Usage
 
