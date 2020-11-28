@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import avatar from '../assets/avatars/heisenberg.png'
 import FemaleAvatar from './FemaleAvatar.svg';
 import { desktopText, mobileText } from '../utils';
 
@@ -34,11 +33,11 @@ const Name = styled.h4`
   margin-bottom: 0;
 `
 
-const Cell = (props) => (
+const Cell = ({setBuyPets, setPetsToView, setCurrentStudent, name, points, pets}) => (
   <Container onClick={() => {
-    props.setView('viewPets');
-    props.setPetsToView(props.pets);
-    props.setCurrentStudent(props.name);
+    setBuyPets(false);
+    setPetsToView(pets);
+    setCurrentStudent(name);
     window.scrollTo({
       top: 800,
       behavior: "smooth"
@@ -48,11 +47,11 @@ const Cell = (props) => (
       <img src={FemaleAvatar} alt="Female Avatar" />
     </ImageContainer>
     <Student>
-      <Name>{props.name}</Name>
-      <div>{props.points} points</div>
-      {props.pets.length === 1
-        ? <div>{props.pets.length} pet</div>
-        : <div>{props.pets.length} pets</div>}
+      <Name>{name}</Name>
+      <div>{points} points</div>
+      {pets.length === 1
+        ? <div>{pets.length} pet</div>
+        : <div>{pets.length} pets</div>}
     </Student>
   </Container>
 );

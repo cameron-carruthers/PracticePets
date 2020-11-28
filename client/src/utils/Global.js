@@ -1,7 +1,7 @@
-import { createGlobalStyle } from 'styled-components';
-import { primaryFont } from './typography';
-import { background } from './colors';
-import { normalize } from 'polished';
+import {createGlobalStyle} from 'styled-components';
+import {primaryFont, desktopText, mobileText} from './typography';
+import {background, primary, primaryTwo, neutral} from './colors';
+import {normalize} from 'polished';
 
 export const GlobalStyle = createGlobalStyle`
   ${normalize()}
@@ -95,25 +95,50 @@ export const GlobalStyle = createGlobalStyle`
     color: white;
     cursor: pointer;
   }
-`
 
-// h1, footer {
-//   flex: inline;
-//   width: 290px;
-//   margin: 20px auto;
-//   text-align: center;
-// }
-/* button {
-  height: 44px;
-  margin: 20px;
-  background: white;
-  border-radius: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 17px;
-  border: none;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit
-  box-shadow: none;
-} */
+  label {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: ${desktopText.mediumText};
+
+    @media (max-width: 600px) {
+      font-size: ${mobileText.mediumText};
+    }
+  }
+
+  select {
+    background: white;
+    border: 2px solid ${primaryTwo};
+    border-radius: 20px;
+    width: 100%;
+    height: 44px;
+    margin: 10px 0;
+    padding: 10px;
+  }
+
+  select:focus {
+    outline: 3px solid ${primary};
+    outline-offset: 2px;
+  }
+
+  textarea {
+    background: white;
+    border: 2px solid ${primaryTwo};
+    border-radius: 20px;
+    width: 100%;
+    height: 100px;
+    margin: 10px 0;
+    padding: 10px;
+  }
+
+  textarea:focus {
+    outline: 3px solid ${primary};
+    outline-offset: 2px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+`

@@ -21,7 +21,7 @@ const ImageBackground = styled.div`
   box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   margin: 20px auto;
-  margin-bottom: 75px;
+  margin-bottom: 50px;
   text-align: center;
   background-image: url(${Scene});
   background-size: 90%;
@@ -45,7 +45,7 @@ const ButtonContainer = styled.div`
 const PetDisplayWrapper = styled.section`
   margin-bottom: 100px;
 `
-const PetDisplay = ({pets, name, toggle, shopForPets}) => {
+const PetDisplay = ({pets, name, toggleModal, shopForPets}) => {
 
   const createScenes = () => {
     const scenes = [];
@@ -70,7 +70,7 @@ const PetDisplay = ({pets, name, toggle, shopForPets}) => {
       <ImageBackgroundContainer>
         {scenes}
         <ButtonContainer>
-          <SecondaryButton modifiers="large" onClick={toggle}>Submit Practice</SecondaryButton>
+          <SecondaryButton modifiers="large" onClick={toggleModal}>Submit Practice</SecondaryButton>
           <PrimaryButton modifiers="large" onClick={shopForPets}>Purchase Pets</PrimaryButton>
         </ButtonContainer>
       </ImageBackgroundContainer>

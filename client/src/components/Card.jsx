@@ -37,13 +37,13 @@ const Price = styled.p`
     font-size: ${mobileText.mainText};
   }
 `
-const Card = (props) => (
+const Card = ({pet, orderPet}) => (
   <Background>
-    {props.pet === 'turtle' || props.pet === 'frog' || props.pet === 'horse' || props.pet === 'monkey'
-    ? <WideImage src={require(`../assets/pets/${props.pet}.png`).default} alt={props.pet} /> 
-    : <Image src={require(`../assets/pets/${props.pet}.png`).default} alt={props.pet} />}
+    {pet === 'turtle' || pet === 'frog' || pet === 'horse' || pet === 'monkey'
+    ? <WideImage src={require(`../assets/pets/${pet}.png`).default} alt={pet} /> 
+    : <Image src={require(`../assets/pets/${pet}.png`).default} alt={pet} />}
     <Price>Price: 5 points</Price>
-    <PrimaryButton modifiers="small" onClick={() => { props.toggle(props.pet) }}>
+    <PrimaryButton modifiers="small" onClick={() => {orderPet(pet)}}>
       Buy This Pet
     </PrimaryButton>
   </Background>

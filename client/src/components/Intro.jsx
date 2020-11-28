@@ -49,12 +49,12 @@ const ButtonContainer = styled.div`
     display: none;
   }
 `
-const Intro = (props) => (
+const Intro = ({toggleModal}) => (
   <IntroContainer>
     <PrimaryHeading>Practice<PrimaryColor>Pets</PrimaryColor></PrimaryHeading>
     <SecondaryHeading>Practice your instrument to earn pets</SecondaryHeading>
     <ButtonContainer>
-      <TertiaryButton modifiers="large" onClick={props.toggle}>Submit Practice</TertiaryButton>
+      <TertiaryButton modifiers="large" onClick={toggleModal}>Submit Practice</TertiaryButton>
     </ButtonContainer>
   </IntroContainer>
 )

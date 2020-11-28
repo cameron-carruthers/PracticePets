@@ -14,7 +14,7 @@ const CardContainer = styled.div`
   max-width: 1100px;
   margin: 10px auto;
 `
-const BuyPets = (props) => {
+const BuyPets = ({orderPet}) => {
 
   const [pets] = useState(["bear", "black-cat", "bunny", "chick", "dog", "frog", "giraffe", "hedgehog", "hippo", "horse", "koala", "lion", "monkey", "owl", "penguin", "pig", "sheep", "tiger", "turtle", "white-cat"]);
 
@@ -23,7 +23,7 @@ const BuyPets = (props) => {
       <Heading>Pets for Sale</Heading>
       <CardContainer>
         {pets.map((pet) => (
-          <Card pet={pet} toggle={props.toggle} key={Math.random()}/>
+          <Card pet={pet} orderPet={orderPet} key={Math.random()}/>
         ))}
       </CardContainer>
     </section> 

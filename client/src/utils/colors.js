@@ -5,3 +5,4 @@ export const primary = '#9f4db1';
 export const primaryTwo = '#6e1d81';
 export const secondary = '#5fb14d';
 export const secondaryTwo = '#1a811f';
+export const neutral = '#737581';

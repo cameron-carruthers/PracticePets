@@ -39,21 +39,21 @@ const StudentListContainer = styled.section`
   margin-top: 100px;
 `
 
-const StudentList = (props) => (
+const StudentList = ({studentData, setBuyPets, setPetsToView, setCurrentStudent}) => (
   <StudentListContainer>
     <Caption>Students</Caption>
     <SubCaption>Whose pets do you want to see?</SubCaption>
     <CellsContainer>
-      {props.studentData.map((student) => (
+      {studentData.map(({name, image, points, pets}) => (
         <Cell
           key={Math.random()}
-          name={student.name}
-          image={student.image} 
-          points={student.points}
-          pets={student.pets}
-          setView={props.setView}
-          setPetsToView={props.setPetsToView}
-          setCurrentStudent={props.setCurrentStudent}
+          name={name}
+          image={image} 
+          points={points}
+          pets={pets}
+          setBuyPets={setBuyPets}
+          setPetsToView={setPetsToView}
+          setCurrentStudent={setCurrentStudent}
         />
       ))}
     </CellsContainer>

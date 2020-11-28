@@ -1,13 +1,14 @@
 import React, { Fragment, useState, useEffect} from 'react';
 import styled from 'styled-components';
-import { Button } from 'reactstrap'
 import axios from 'axios';
-import FormModal from './FormModal.jsx';
+import Modal from './Modal.jsx';
 import PetDisplay from './PetDisplay.jsx';
 import BuyPets from './BuyPets.jsx'
 import StudentList from './StudentList.jsx'
 import Hero from './Hero.jsx';
 import { GlobalStyle } from '../utils';
+import PurchasePetsForm from './PurchasePetsForm.jsx';
+import PracticeForm from './PracticeForm.jsx';
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,16 +16,16 @@ const Wrapper = styled.div`
 `
 const App = () => {
 
-  const [modal, setModal] = useState(false);
-  const [view, setView] = useState('viewPets');
   const [studentData, setStudentData] = useState([]);
   const [currentPet, setCurrentPet] = useState(null);
   const [currentStudent, setCurrentStudent] = useState(null);
   const [petsToView, setPetsToView] = useState(null);
-  const [form, setForm] = useState(null);
+  const [buyPets, setBuyPets] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [form, setForm] = useState('practice');
 
   const shopForPets = () => {
-    setView('buyPets');
+    setBuyPets(true);
     window.scrollTo({
       top: 800,
       behavior: "smooth"
@@ -32,21 +33,16 @@ const App = () => {
   }
 
   const returnHome = () => {
-    setView('viewPets');
+    setBuyPets(false);
     window.scrollTo({
       top: 800,
       behavior: "smooth"
     });
   }
   
-  const toggle = (pet) => {
-    if (typeof pet === 'string') {
-      setCurrentPet(pet);
-      setForm('buyPets');
-    } else {
-      setForm('submitPractice')
-    }
-    setModal(!modal);
+  const orderPet = (pet) => {
+    setCurrentPet(pet);
+    toggleModal('buyPets');
   }
 
   const retrieveStudentData = () => {
@@ -60,40 +56,55 @@ const App = () => {
 
   useEffect(() => {
     retrieveStudentData();
-  }, [modal]);
+  }, [showModal]);
+
+  const toggleModal = (form = 'practice') => {
+    setForm(form);
+    setShowModal(!showModal);
+  }
+
+  const displayModalContent = () => {
+    const component = form === 'buyPets'
+    ? 
+      <PurchasePetsForm 
+        studentData={studentData}
+        toggleModal={toggleModal}
+        retrieveStudentData={retrieveStudentData} 
+        currentPet={currentPet}
+      />  
+    : 
+    <PracticeForm 
+      studentData={studentData}
+      toggleModal={toggleModal}
+      retrieveStudentData={retrieveStudentData}
+    />
+    return component;
+  }
 
   return (
     <Fragment>
       <GlobalStyle />
-      <Hero toggle={toggle} shopForPets={shopForPets} returnHome={returnHome}/>
-      <Wrapper>
-        {view === 'buyPets' ? <BuyPets toggle={toggle} /> : null}
-        {view === 'viewPets' ? <PetDisplay 
-          pets={petsToView} 
-          name={currentStudent} 
-          toggle={toggle}
-          shopForPets={shopForPets}
-          />
-        : null}
-        {view === 'viewPets' ? <StudentList 
-          studentData={studentData} 
-          setView={setView} 
-          setPetsToView={setPetsToView}
-          setCurrentStudent={setCurrentStudent}
-          />
-        : null}
-      </Wrapper>
-      <FormModal 
-        toggle={toggle} 
-        modal={modal} 
-        studentData={studentData} 
-        retrieveStudentData={retrieveStudentData}
-        currentPet={currentPet}
-        view={view}
-        setView={setView}
-        setForm={setForm}
-        form={form}
-      />
+      <Hero toggleModal={toggleModal} returnHome={returnHome}/>
+        {buyPets
+        ? <BuyPets orderPet={orderPet} />
+        : 
+        <Wrapper>
+          <PetDisplay 
+            pets={petsToView} 
+            name={currentStudent} 
+            toggleModal={toggleModal}
+            shopForPets={shopForPets}
+            />
+          <StudentList 
+            studentData={studentData} 
+            setBuyPets={setBuyPets} 
+            setPetsToView={setPetsToView}
+            setCurrentStudent={setCurrentStudent}
+            />
+        </Wrapper>}
+        {showModal ? <Modal>
+          {displayModalContent()}
+        </Modal> : null}
     </Fragment>
   )
 };
