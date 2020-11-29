@@ -16,7 +16,13 @@ const IntroContainer = styled.div`
   top: 21%;
 
   @media (max-width: 1100px) {
+    left: 55%;
+    top: 30%;
+  }
+
+  @media (max-width: 600px) {
     left: 45%;
+    top: 21%;
   }
 
   @media (max-height: 768px) and (min-width: 568px) {

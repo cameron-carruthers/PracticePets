@@ -25,11 +25,15 @@ const CellsContainer = styled.div`
   grid-column-gap: 20px;
   padding: 0 20px;
 
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   @media (max-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 350px) {
+  @media (max-width: 450px) {
     grid-template-columns: repeat(1, 1fr);
   }
 `

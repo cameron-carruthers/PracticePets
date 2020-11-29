@@ -69,6 +69,10 @@ export const GlobalStyle = createGlobalStyle`
     @media (max-height: 400px) {
       font-size: 1.25rem;
     }
+
+    @media (max-width: 350px) {
+      font-size: 1.25rem;
+    }
   }
 
   h4 {

@@ -21,8 +21,12 @@ const SubHeading = styled.p`
   text-align: center;
   margin-bottom: 5px;
 
-  @mobile (max-width: 600px) {
+  @media (max-width: 600px) {
     font-size: ${mobileText.introText};
+  }
+
+  @media (max-width: 400px) {
+    display: none;
   }
 `
 
@@ -31,8 +35,12 @@ const Points = styled.p`
   text-align: center;
   margin-bottom: 5px;
 
-  @mobile (max-width: 600px) {
+  @media (max-width: 600px) {
     font-size: mobileText.mainText;
+  }
+
+  @media (max-width: 400px) {
+    display: none;
   }
 `
 

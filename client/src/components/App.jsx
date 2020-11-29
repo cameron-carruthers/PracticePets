@@ -9,10 +9,17 @@ import Hero from './Hero.jsx';
 import { GlobalStyle } from '../utils';
 import PurchasePetsForm from './PurchasePetsForm.jsx';
 import PracticeForm from './PracticeForm.jsx';
+import MobilePetDisplay from './MobilePetDisplay.jsx';
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  width: 90vw;
+  margin: 0 auto;
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+  }
 `
 const App = () => {
 
@@ -89,6 +96,12 @@ const App = () => {
         ? <BuyPets orderPet={orderPet} />
         : 
         <Wrapper>
+          <MobilePetDisplay 
+              pets={petsToView} 
+              name={currentStudent} 
+              toggleModal={toggleModal}
+              shopForPets={shopForPets}
+              />
           <PetDisplay 
             pets={petsToView} 
             name={currentStudent} 

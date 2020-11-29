@@ -8,11 +8,17 @@ const Pet1 = styled.img`
   left: 14%;
   top: 7%;
 
+  @media (max-width: 1100px) {
+    width: 20%;
+    left: 3%;
+    top: 15%;
+  }
+
   @media (max-height: 768px) and (min-width: 568px) {
     display: none;
   }
 
-  @media (max-width: 1100px) {
+  @media (max-width: 600px) {
     display: none;
   }
 `
@@ -25,11 +31,7 @@ const Pet2 = styled.img`
   @media (max-width: 1100px) {
     left: 20%;
     width: 20%;
-    top: 15%;
-  }
-
-  @media (max-width: 900px) {
-    top: 10%;
+    top: 30%;
   }
 
   @media (max-width: 715px) {
@@ -63,11 +65,17 @@ const Pet3 = styled.img`
   left: 35%;
   top: 6%;
 
+  @media (max-width: 1100px) {
+    width: 20%;
+    top: 15%;
+    left: 30%;
+  }
+
   @media (max-height: 768px) and (min-width: 568px) {
     display: block;
   }
 
-  @media (max-width: 1100px) {
+  @media (max-width: 600px) {
     display: none;
   }
 

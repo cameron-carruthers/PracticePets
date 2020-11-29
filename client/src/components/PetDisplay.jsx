@@ -9,14 +9,14 @@ const Title = styled.h2`
 `
 
 const Image = styled.img`
-  height: 160px;
-  margin: 0px 15px;
+  height: 150px;
+  margin: 0;
 `
 
 const ImageBackground = styled.div`
   max-width: 850px;
-  width: 822px;
-  height: 538px;
+  width: 43rem;
+  height: 28rem;
   background: white;
   box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
@@ -44,6 +44,10 @@ const ButtonContainer = styled.div`
 
 const PetDisplayWrapper = styled.section`
   margin-bottom: 100px;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `
 const PetDisplay = ({pets, name, toggleModal, shopForPets}) => {
 
