@@ -30,7 +30,7 @@ const Student = styled.div`
   }
 `
 const Name = styled.h4`
-  margin-bottom: 0;
+  margin: 0;
 `
 
 const Cell = ({setBuyPets, setPetsToView, setCurrentStudent, name, points, pets}) => (

@@ -28,6 +28,7 @@ export const GlobalStyle = createGlobalStyle`
   h1 {
     font-size: 3.75rem;
     font-weight: 700;
+    margin: 0;
 
     @media (max-width: 800px) {
       font-size: 2.125rem;
@@ -41,6 +42,7 @@ export const GlobalStyle = createGlobalStyle`
   h2 {
     font-size: 3.125rem;
     font-weight: 700;
+    margin: 0;
 
     @media (max-width: 800px) {
       font-size: 2rem;
@@ -54,6 +56,7 @@ export const GlobalStyle = createGlobalStyle`
   h3 {
     font-size: 2.5rem;
     font-weight: 700;
+    margin: 0;
 
     @media (max-width: 800px) {
       font-size: 1.75rem;
@@ -62,11 +65,16 @@ export const GlobalStyle = createGlobalStyle`
     @media (max-height: 768px) and (min-width: 568px) {
       font-size: 1.75rem;
     }
+
+    @media (max-height: 400px) {
+      font-size: 1.25rem;
+    }
   }
 
   h4 {
     font-size: 1.875rem;
     font-weight: 700;
+    margin: 0;
 
     @media (max-width: 800px) {
       font-size: 1.5rem;
@@ -80,6 +88,7 @@ export const GlobalStyle = createGlobalStyle`
   h5 {
     font-size: 1.5rem;
     font-weight: 700;
+    margin: 0;
 
     @media (max-width: 800px) {
       font-size: 1.25rem;
@@ -94,6 +103,10 @@ export const GlobalStyle = createGlobalStyle`
     margin: 20px;
     color: white;
     cursor: pointer;
+
+    @media (max-width: 600px) {
+      margin: 10px;
+    }
   }
 
   label {
