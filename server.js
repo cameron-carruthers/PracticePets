@@ -15,12 +15,6 @@ app.get('/image', (req, res) => {
   const image = path.join(__dirname, 'image.png');
   res.sendFile(image);
 })
- 
-app.listen(port, function () {
- 
-    console.log('send file demo is up on port: ' + port);
- 
-});
 
 app.put('/practice',(req, res) => {
   const { practiceAmount, completedAssignments, comments, name } = req.body;
