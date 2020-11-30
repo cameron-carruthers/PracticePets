@@ -1,8 +1,7 @@
 const express = require('express');
-const Student = require('./database');
+const Student = require('./config/db.js');
 
 const app = express();
-
 const PORT = process.env.PORT || 3000;
 
 app.use(express.static('client/dist'));
