@@ -35,8 +35,9 @@ I wanted to build a fun practice incentive for the online piano classes I teach.
 - SVG
 - Node
 - Express
-- MongoDB
+- MongoDB & MongoDB Atlas
 - Mongoose
+- Heroku
 
 ## Usage
 
