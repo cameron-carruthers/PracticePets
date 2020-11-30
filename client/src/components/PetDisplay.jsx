@@ -55,16 +55,21 @@ const PetDisplay = ({pets, name, toggleModal, shopForPets}) => {
     const scenes = [];
 
     if (pets) {
-      while (pets.length > 0) {
-        let nextFivePets = pets.slice(0,5);
-        scenes.push(
-          <ImageBackground>
-            {nextFivePets.map((pet) => (
-              <Image src={require(`../assets/pets/${pet}.png`).default} alt={pet} key={Math.random()}/>
-            ))}
-          </ImageBackground>
-        )
-        pets = pets.slice(5);
+
+      if (pets.length === 0) {
+        scenes.push(<ImageBackground />)
+      } else {
+        while (pets.length > 0) {
+          let nextFivePets = pets.slice(0,5);
+          scenes.push(
+            <ImageBackground>
+              {nextFivePets.map((pet) => (
+                <Image src={require(`../assets/pets/${pet}.png`).default} alt={pet} key={Math.random()}/>
+              ))}
+            </ImageBackground>
+          )
+          pets = pets.slice(5);
+        }
       }
     } else {
       scenes.push(<ImageBackground />)

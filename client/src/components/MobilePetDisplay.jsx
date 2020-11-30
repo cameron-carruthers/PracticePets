@@ -54,11 +54,11 @@ const Image = styled.img`
 const MobilePetDisplay = ({pets, name, toggleModal, shopForPets}) => (
   <ImageBackgroundContainer>
     {name ? <Title>{name}'s Pets</Title> : <Title>Welcome to PracticePets</Title>}
-    {pets ? pets.map((pet) => (
+    {pets ? pets.length > 0 ? pets.map((pet) => (
       <ImageBackground>
         <Image src={require(`../assets/pets/${pet}.png`).default} alt={pet} key={Math.random()}/>
       </ImageBackground>
-    )) : <ImageBackground />}
+    )) : <ImageBackground /> : <ImageBackground />}
     <ButtonContainer>
       <SecondaryButton modifiers="small" onClick={toggleModal}>Submit Practice</SecondaryButton>
       <PrimaryButton modifiers="small" onClick={shopForPets}>Purchase Pets</PrimaryButton>
