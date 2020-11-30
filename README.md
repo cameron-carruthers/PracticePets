@@ -2,8 +2,7 @@
 
 > PracticePets is an incentive for elementary music students to practice their music each week.
 
-Note: This app is currently being redesigned.  The most recent Figma mockups can be found here:
-https://www.figma.com/file/ps6UU7Dpjj9qMvbPkZf7cX/PracticePets-Mockups?node-id=0%3A1
+Live Site: https://www.practicepets.com/
 
 ## Motivation
 
