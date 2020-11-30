@@ -2,7 +2,9 @@
 
 > PracticePets is an incentive for elementary music students to practice their music each week.
 
-## Live Site: https://www.practicepets.com/
+## Live Site
+
+https://www.practicepets.com/
 
 ## Motivation
 
