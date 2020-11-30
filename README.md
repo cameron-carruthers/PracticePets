@@ -55,5 +55,5 @@ Executing the code below will install dependencies, seed the Database, start the
 npm install
 node seedDatabase.js
 npm run react-dev
-npm run start-server
+npm run dev-server
 ```
