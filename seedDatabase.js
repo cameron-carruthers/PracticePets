@@ -1,7 +1,6 @@
 const { Seeder } = require('mongo-seeding');
 const path = require('path');
-const configDB = require('config');
-const db = configDB.get('mongoURI');
+const db = process.env.MONGO_URI || 'mongodb://localhost:27017/practice-pets';
 
 const config = {
   database: db,

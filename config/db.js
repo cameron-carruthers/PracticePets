@@ -1,8 +1,5 @@
 const mongoose = require('mongoose');
-// const config = require('config');
-// const db = config.get('mongoURI');
-
-const db = process.env.MONGO_URI;
+const db = process.env.MONGO_URI || 'mongodb://localhost:27017/practice-pets';
 
 mongoose
   .connect(db, {
