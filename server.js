@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use(express.urlencoded({extended: true}));
 
-app.get('/image', (req, res) => {
+app.get('/image.png', (req, res) => {
   const image = path.join(__dirname, 'image.png');
   res.sendFile(image);
 })
