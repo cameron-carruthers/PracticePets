@@ -8,7 +8,7 @@ const ImageBackgroundContainer = styled.section`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 600px) {
+  @media (min-width: 750px) {
     display: none;
   }
 `

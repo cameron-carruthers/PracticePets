@@ -1,77 +1,70 @@
 [
   {
-    "name": "Grae",
-    "image": "heisenberg.png",
+    "name": "Johnny",
+    "gender": "boy",
     "points": 0,
     "pets": [],
     "weeklyPracticeData": []
   },
   {
-    "name": "Baylee",
-    "image": "avatar.png",
+    "name": "Sarah",
+    "gender": "girl",
     "points": 0,
     "pets": [],
     "weeklyPracticeData": []
   },
   {
-    "name": "Marshall",
-    "image": "avatar-1.png",
+    "name": "Caleb",
+    "gender": "boy",
     "points": 0,
     "pets": [],
     "weeklyPracticeData": []
   },
   {
-    "name": "Veera",
-    "image": "avatar-2.png",
+    "name": "Liam",
+    "gender": "boy",
     "points": 0,
     "pets": [],
     "weeklyPracticeData": []
   },
   {
-    "name": "Jed",
-    "image": "boy.png",
+    "name": "Rachel",
+    "gender": "girl",
     "points": 0,
     "pets": [],
     "weeklyPracticeData": []
   },
   {
-    "name": "Darren",
-    "image": "boy-1.png",
+    "name": "Matilda",
+    "gender": "girl",
     "points": 0,
     "pets": [],
     "weeklyPracticeData": []
   },
   {
-    "name": "Bella",
-    "image": "boy-2.png",
+    "name": "Michael",
+    "gender": "boy",
     "points": 0,
     "pets": [],
     "weeklyPracticeData": []
   },
   {
-    "name": "Steph",
-    "image": "boy-3.png",
+    "name": "Kamryn",
+    "gender": "girl",
     "points": 0,
     "pets": [],
     "weeklyPracticeData": []
   },
   {
-    "name": "Sammy",
-    "image": "boy-4.png",
+    "name": "Kyle",
+    "gender": "boy",
     "points": 0,
     "pets": [],
     "weeklyPracticeData": []
   },
   {
-    "name": "Erin",
-    "image": "boy-5.png",
-    "points": 0,
-    "pets": [],
-    "weeklyPracticeData": []
-  },
-  {
-    "name": "Naani",
-    "image": "catwoman.png",
+    "name": "Kayleigh",
+    "gender": "girl",
     "points": 0,
     "pets": [],
     "weeklyPracticeData": []

@@ -1,12 +1,16 @@
 {
-  "name": "practice-tracker",
+  "name": "practice-pets",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.jsx",
+  "description": "Practice incentive for elementary music students and their teachers",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "react-dev": "webpack -d --watch",
-    "start-server": "nodemon server.js"
+    "dev-server": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "12.18.1"
   },
   "author": "",
   "license": "ISC",

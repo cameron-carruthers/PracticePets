@@ -21,6 +21,11 @@ const Wrapper = styled.div`
     flex-direction: column;
   }
 `
+
+const Container = styled.div`
+  filter: ${props => props.blur ? 'blur(15px)' : 'none'}
+`
+
 const App = () => {
 
   const [studentData, setStudentData] = useState([]);
@@ -89,7 +94,7 @@ const App = () => {
   }
 
   return (
-    <Fragment>
+    <Container blur={showModal}>
       <GlobalStyle />
       <Hero toggleModal={toggleModal} returnHome={returnHome}/>
         {buyPets
@@ -118,7 +123,7 @@ const App = () => {
         {showModal ? <Modal>
           {displayModalContent()}
         </Modal> : null}
-    </Fragment>
+    </Container>
   )
 };
 
