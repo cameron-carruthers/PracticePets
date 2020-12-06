@@ -33,7 +33,7 @@ const ButtonContainer = styled.div`
 
 const MobileHero = ({returnHome}) => (
   <Container>
-    <i style={{alignSelf: "flex-start"}} className="fas fa-home fa-2x" onClick={returnHome}></i>
+    <i tabindex="0" style={{alignSelf: "flex-start"}} className="fas fa-home fa-2x" onClick={returnHome}></i>
     <Title />
     <FlexContainer>
       <Subtitle />

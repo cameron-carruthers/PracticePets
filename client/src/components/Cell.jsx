@@ -34,7 +34,7 @@ const Name = styled.h4`
 `
 
 const Cell = ({setBuyPets, setPetsToView, setCurrentStudent, name, points, pets}) => (
-  <Container onClick={() => {
+  <Container tabindex="0" onClick={() => {
     setBuyPets(false);
     setPetsToView(pets);
     setCurrentStudent(name);
