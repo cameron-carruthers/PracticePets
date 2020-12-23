@@ -9,7 +9,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (min-width: 560px) {
+  @media (min-width: 767px) {
     display: none;
   }
 `
@@ -26,21 +26,21 @@ const MobilePet = styled.img`
 `
 
 const ButtonContainer = styled.div`
-  @media (max-width: 350px) {
+  @media (max-width: 300px) {
     display: none;
   }
 `
 
-const MobileHero = ({returnHome}) => (
+const MobileHero = ({returnHome, toggleModal}) => (
   <Container>
-    <i tabindex="0" style={{alignSelf: "flex-start"}} className="fas fa-home fa-2x" onClick={returnHome}></i>
+    <i tabIndex="0" style={{alignSelf: "flex-start"}} className="fas fa-home fa-2x" onClick={returnHome}></i>
     <Title />
     <FlexContainer>
       <Subtitle />
       <MobilePet src={require('../assets/pets/white-cat.png').default}/>
     </FlexContainer>
     <ButtonContainer>
-      <TertiaryButton modifiers="small">Submit Practice</TertiaryButton>
+      <TertiaryButton modifiers="small" onClick={toggleModal}>Submit Practice</TertiaryButton>
     </ButtonContainer>
   </Container>
 );
