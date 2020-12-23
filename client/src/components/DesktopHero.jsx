@@ -8,18 +8,10 @@ const Pet1 = styled.img`
   left: 14%;
   top: 7%;
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1025px) {
     width: 20%;
     left: 3%;
     top: 15%;
-  }
-
-  ${'' /* @media (max-height: 768px) and (min-width: 568px) {
-    display: none;
-  } */}
-
-  @media (max-width: 600px) {
-    display: none;
   }
 `
 const Pet2 = styled.img`
@@ -28,35 +20,11 @@ const Pet2 = styled.img`
   left: 26%;
   top: 23%;
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1025px) {
     left: 20%;
     width: 20%;
     top: 30%;
   }
-
-  @media (max-width: 715px) {
-    top: 20%;
-    left: 56%;
-    width: 40%;
-  }
-
-  ${'' /* @media (max-height: 768px) and (min-width: 568px) {
-    left: 20%;
-    top: 10%;
-    width: 14%;
-  } */}
-${'' /* 
-  @media (max-height: 500px) {
-    left: 23%;
-    top: 10%;
-    width: 13%;
-  } */}
-
-  ${'' /* @media (max-height: 350px) {
-    left: 25%;
-    top: 2%;
-    width: 10%;
-  } */}
 `
 
 const Pet3 = styled.img`
@@ -65,24 +33,11 @@ const Pet3 = styled.img`
   left: 35%;
   top: 6%;
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1025px) {
     width: 20%;
     top: 15%;
     left: 30%;
   }
-
-  ${'' /* @media (max-height: 768px) and (min-width: 568px) {
-    display: block;
-  } */}
-
-  @media (max-width: 600px) {
-    display: none;
-  }
-
-  ${'' /* @media (max-height: 500px) {
-    width: 10%;
-    top: 0;
-  } */}
 `
 
 const Container = styled.div`

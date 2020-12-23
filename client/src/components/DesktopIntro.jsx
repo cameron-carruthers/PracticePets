@@ -15,40 +15,14 @@ const IntroContainer = styled.div`
   left: 52%;
   top: 21%;
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1025px) {
     left: 55%;
     top: 30%;
-  }
-
-  @media (max-width: 600px) {
-    left: 45%;
-    top: 21%;
-  }
-
-  ${'' /* @media (max-height: 768px) and (min-width: 568px) {
-    top: 10%;
-  } */}
-
-  ${'' /* @media (max-height: 400px) {
-    top: 0%;
-    width: 20%;
-  } */}
-
-  @media (max-width: 560px){
-    display: none;
   }
 `
 
 const ButtonContainer = styled.div`
   margin-top: 20px;
-
-  @media (max-width: 600px) {
-    display: none;
-  }
-
-  ${'' /* @media (max-height: 500px) {
-    display: none;
-  } */}
 `
 const DesktopIntro = ({toggleModal}) => (
   <IntroContainer>
