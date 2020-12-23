@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   filter: ${props => props.blur ? 'blur(15px)' : 'none'};
-  overflow-x:hidden;
+  overflow-x: hidden;
 `
 
 const App = () => {
