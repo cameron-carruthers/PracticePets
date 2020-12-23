@@ -10,14 +10,14 @@ const IntroContainer = styled.div`
   text-align: center;
   align-items: center;
   position: absolute;
-  width: 29%;
+  width: 36%;
   height: 33%;
   left: 52%;
   top: 21%;
 
   @media (max-width: 1025px) {
     left: 55%;
-    top: 30%;
+    top: 23%;
   }
 `
 

@@ -15,8 +15,13 @@ const Heading = styled.div`
 
   @media (max-width: 1025px) {
     background-image: url(${MobileBackground});
+    background-position: 0px -100px;
     width: 100vw;
     height: 200vw;
+  }
+
+  @media (max-width: 767px) {
+    background-position: 0px 0px;
   }
 `
 

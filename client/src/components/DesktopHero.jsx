@@ -11,7 +11,7 @@ const Pet1 = styled.img`
   @media (max-width: 1025px) {
     width: 20%;
     left: 3%;
-    top: 15%;
+    top: 5%;
   }
 `
 const Pet2 = styled.img`
@@ -23,7 +23,7 @@ const Pet2 = styled.img`
   @media (max-width: 1025px) {
     left: 20%;
     width: 20%;
-    top: 30%;
+    top: 15%;
   }
 `
 
@@ -35,7 +35,7 @@ const Pet3 = styled.img`
 
   @media (max-width: 1025px) {
     width: 20%;
-    top: 15%;
+    top: 5%;
     left: 30%;
   }
 `
@@ -47,7 +47,7 @@ const Container = styled.div`
   height: 100%;
   width: 100%;
 
-  @media (max-width: 560px) {
+  @media (max-width: 767px) {
     display: none;
   }
 `

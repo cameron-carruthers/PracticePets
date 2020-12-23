@@ -9,7 +9,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (min-width: 560px) {
+  @media (min-width: 767px) {
     display: none;
   }
 `
@@ -26,7 +26,7 @@ const MobilePet = styled.img`
 `
 
 const ButtonContainer = styled.div`
-  @media (max-width: 350px) {
+  @media (max-width: 300px) {
     display: none;
   }
 `
