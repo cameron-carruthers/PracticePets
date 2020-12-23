@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import FemaleAvatar from './FemaleAvatar.svg';
-import { desktopText, mobileText } from '../utils';
+import { desktopText, mobileText, primary } from '../utils';
 
 const Container = styled.div`
   display: grid;
@@ -13,6 +13,11 @@ const Container = styled.div`
   @media (max-width: 600px) {
     grid-template-columns: 50px auto;
   }
+
+  &:focus {
+  outline: 3px solid ${primary};
+  outline-offset: 2px;
+}
 `
 
 const ImageContainer = styled.div`
@@ -34,7 +39,7 @@ const Name = styled.h4`
 `
 
 const Cell = ({setBuyPets, setPetsToView, setCurrentStudent, name, points, pets}) => (
-  <Container tabindex="0" onClick={() => {
+  <Container tabIndex="0" onClick={() => {
     setBuyPets(false);
     setPetsToView(pets);
     setCurrentStudent(name);

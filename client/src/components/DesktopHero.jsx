@@ -54,7 +54,7 @@ const Container = styled.div`
 
 const DesktopHero = ({toggleModal, returnHome}) => (
   <Container>
-    <i tabindex="0" className="fas fa-home fa-2x" onClick={returnHome}></i>
+    <i tabIndex="0" className="fas fa-home fa-2x" onClick={returnHome}></i>
     <Pet1 src={require('../assets/pets/hippo.png').default}/>
     <Pet2 src={require('../assets/pets/white-cat.png').default}/>
     <Pet3 src={require('../assets/pets/bunny.png').default}/>

@@ -1,6 +1,6 @@
 import {createGlobalStyle} from 'styled-components';
 import {primaryFont, desktopText, mobileText} from './typography';
-import {background, primary, primaryTwo, neutral} from './colors';
+import {background, primary, primaryTwo} from './colors';
 import {normalize} from 'polished';
 
 export const GlobalStyle = createGlobalStyle`
@@ -88,6 +88,11 @@ export const GlobalStyle = createGlobalStyle`
     @media (max-width: 600px) {
       margin: 10px;
     }
+  }
+
+  i:focus {
+    outline: 3px solid white;
+    outline-offset: 2px;
   }
 
   label {
