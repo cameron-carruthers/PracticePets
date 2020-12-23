@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {PrimaryButton} from './Buttons';
-import {desktopText, mobileText} from '../utils/typography';
+import { PrimaryButton } from './Buttons';
+import { desktopText, mobileText } from '../utils/typography';
 
 const Background = styled.div`
   height: 375px;

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Title from './Title.jsx';
 import Subtitle from './Subtitle.jsx';
-import {TertiaryButton} from './Buttons';
+import { TertiaryButton } from './Buttons';
 
 const IntroContainer = styled.div`
   display: flex;

@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import {PrimaryButton, SecondaryButton} from './Buttons';
-import {desktopText, mobileText} from '../utils';
-import {neutral} from '../utils';
+import { PrimaryButton, SecondaryButton } from './Buttons';
+import { desktopText, mobileText } from '../utils';
+import { neutral } from '../utils';
 
 const Heading = styled.h4`
   margin: 0 auto;

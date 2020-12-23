@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import {primary} from '../utils';
-import {desktopText, mobileText} from '../utils';
+import { primary } from '../utils';
+import { desktopText, mobileText } from '../utils';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
 const BUTTON_MODIFIERS = {

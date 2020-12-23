@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Scene from './Scene.svg';
-import {PrimaryButton, SecondaryButton} from './Buttons';
+import { PrimaryButton, SecondaryButton } from './Buttons';
 
 const Title = styled.h2`
   text-align: center;

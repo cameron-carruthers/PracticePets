@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect} from 'react';
+import React, { useState, useEffect} from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import Modal from './Modal.jsx';
@@ -15,10 +15,15 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
   width: 90vw;
-  margin: 0 auto;
+  margin: -50px auto;
 
   @media (max-width: 1100px) {
     flex-direction: column;
+    margin: -500px auto;
+  }
+
+  @media (max-width: 600px) {
+    margin: -240px auto;
   }
 `
 
