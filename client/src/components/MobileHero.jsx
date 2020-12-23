@@ -31,7 +31,7 @@ const ButtonContainer = styled.div`
   }
 `
 
-const MobileHero = ({returnHome}) => (
+const MobileHero = ({returnHome, toggleModal}) => (
   <Container>
     <i tabindex="0" style={{alignSelf: "flex-start"}} className="fas fa-home fa-2x" onClick={returnHome}></i>
     <Title />
@@ -40,7 +40,7 @@ const MobileHero = ({returnHome}) => (
       <MobilePet src={require('../assets/pets/white-cat.png').default}/>
     </FlexContainer>
     <ButtonContainer>
-      <TertiaryButton modifiers="small">Submit Practice</TertiaryButton>
+      <TertiaryButton modifiers="small" onClick={toggleModal}>Submit Practice</TertiaryButton>
     </ButtonContainer>
   </Container>
 );
