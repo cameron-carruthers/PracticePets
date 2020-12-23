@@ -93,7 +93,7 @@ const PurchasePetsForm = ({studentData, toggleModal, retrieveStudentData, curren
   return (
     <form>
       <Heading>Buy a New Pet</Heading>
-      {<Image align="center" src={require(`../assets/pets/${currentPet}.png`).default} alt="avatar" /> || null}
+      {<Image align="center" src={require(`../assets/pets/${currentPet}.png`).default} alt={currentPet} /> || null}
       <label for="name">
         Name
         <Select inputColor={inputColor} value={name} onChange={(e) => { 

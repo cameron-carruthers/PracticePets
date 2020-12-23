@@ -5,7 +5,7 @@ import MobileBackground from './MobileBackground.svg';
 import DesktopHero from './DesktopHero.jsx';
 import MobileHero from './MobileHero.jsx';
 
-const Heading = styled.div`
+const Heading = styled.header`
   background: no-repeat;
   background-image: url(${Background});
   width: 100vw;
@@ -29,7 +29,6 @@ const Hero = ({toggleModal, returnHome}) => (
   <Heading>
     <MobileHero toggleModal={toggleModal} returnHome={returnHome}/>
     <DesktopHero toggleModal={toggleModal} returnHome={returnHome}/>
-    <div id="hero-end"></div>
   </Heading>
 )
 

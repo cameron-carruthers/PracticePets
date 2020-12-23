@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { PrimaryButton, SecondaryButton } from './Buttons';
 import Scene from './Scene.svg';
 
-const ImageBackgroundContainer = styled.section`
+const ImageBackgroundContainer = styled.div`
   display: flex;
   flex-direction: column;
 
