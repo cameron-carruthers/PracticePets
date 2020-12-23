@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import Modal from './Modal.jsx';
@@ -11,7 +11,7 @@ import PurchasePetsForm from './PurchasePetsForm.jsx';
 import PracticeForm from './PracticeForm.jsx';
 import MobilePetDisplay from './MobilePetDisplay.jsx';
 
-const Wrapper = styled.div`
+const PetDisplayWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   width: 90vw;
@@ -27,9 +27,31 @@ const Wrapper = styled.div`
   }
 `
 
+const BuyPetsWrapper = styled.div`
+  margin: -50px auto;
+
+  @media (max-width: 1100px) {
+    margin: -500px auto;
+  }
+
+  @media (max-width: 600px) {
+    margin: -240px auto;
+  }
+`
+
 const Container = styled.div`
   filter: ${props => props.blur ? 'blur(15px)' : 'none'};
   overflow-x: hidden;
+`
+
+const Title = styled.h2`
+  text-align: center;
+  margin: 20px auto;
+`
+
+const BuyPetsHeading = styled.h2`
+  text-align: center;
+  margin: 20px auto;
 `
 
 const App = () => {
@@ -42,18 +64,31 @@ const App = () => {
   const [showModal, setShowModal] = useState(false);
   const [form, setForm] = useState('practice');
 
-  const shopForPets = () => {
-    setBuyPets(true);
-    window.scrollTo({
-      top: 800,
+  const petDisplayRef = useRef(null);
+  const buyPetsRef = useRef(null);
+
+  const scrollToPetDisplay = () => {
+    petDisplayRef.current.scrollIntoView({
       behavior: "smooth"
     });
+  }
+
+  useEffect(() => {
+    if (buyPets) {
+      buyPetsRef.current.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  }, [buyPets])
+
+  const shopForPets = () => {
+    setBuyPets(true);
   }
 
   const returnHome = () => {
     setBuyPets(false);
     window.scrollTo({
-      top: 800,
+      top: 0,
       behavior: "smooth"
     });
   }
@@ -89,6 +124,7 @@ const App = () => {
         toggleModal={toggleModal}
         retrieveStudentData={retrieveStudentData} 
         currentPet={currentPet}
+        returnHome={returnHome}
       />  
     : 
     <PracticeForm 
@@ -104,28 +140,33 @@ const App = () => {
       <GlobalStyle />
       <Hero toggleModal={toggleModal} returnHome={returnHome}/>
         {buyPets
-        ? <BuyPets orderPet={orderPet} />
+        ? <BuyPetsWrapper>
+            <BuyPetsHeading ref={buyPetsRef}>Pets for Sale</BuyPetsHeading>
+            <BuyPets orderPet={orderPet} />
+        </BuyPetsWrapper>
         : 
-        <Wrapper>
-          <MobilePetDisplay 
+        <PetDisplayWrapper>
+          <div>
+            <Title ref={petDisplayRef}>{currentStudent ? `${currentStudent}'s Pets` : 'Welcome to PracticePets'}</Title>
+            <MobilePetDisplay 
+                pets={petsToView} 
+                toggleModal={toggleModal}
+                shopForPets={shopForPets}
+                />
+            <PetDisplay 
               pets={petsToView} 
-              name={currentStudent} 
               toggleModal={toggleModal}
               shopForPets={shopForPets}
               />
-          <PetDisplay 
-            pets={petsToView} 
-            name={currentStudent} 
-            toggleModal={toggleModal}
-            shopForPets={shopForPets}
-            />
+          </div>
           <StudentList 
             studentData={studentData} 
             setBuyPets={setBuyPets} 
             setPetsToView={setPetsToView}
             setCurrentStudent={setCurrentStudent}
+            scrollToPetDisplay={scrollToPetDisplay}
             />
-        </Wrapper>}
+        </PetDisplayWrapper>}
         {showModal ? <Modal>
           {displayModalContent()}
         </Modal> : null}

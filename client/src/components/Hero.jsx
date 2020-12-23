@@ -29,6 +29,7 @@ const Hero = ({toggleModal, returnHome}) => (
   <Heading>
     <MobileHero toggleModal={toggleModal} returnHome={returnHome}/>
     <DesktopHero toggleModal={toggleModal} returnHome={returnHome}/>
+    <div id="hero-end"></div>
   </Heading>
 )
 

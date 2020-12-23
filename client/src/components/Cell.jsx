@@ -38,15 +38,12 @@ const Name = styled.h4`
   margin: 0;
 `
 
-const Cell = ({setBuyPets, setPetsToView, setCurrentStudent, name, points, pets}) => (
+const Cell = ({setBuyPets, setPetsToView, setCurrentStudent, scrollToPetDisplay, name, points, pets}) => (
   <Container tabIndex="0" onClick={() => {
     setBuyPets(false);
     setPetsToView(pets);
     setCurrentStudent(name);
-    window.scrollTo({
-      top: 800,
-      behavior: "smooth"
-    });
+    scrollToPetDisplay();
   }}>
     <ImageContainer>
       <img src={FemaleAvatar} alt="Female Avatar" />

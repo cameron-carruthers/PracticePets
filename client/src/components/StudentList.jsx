@@ -43,7 +43,7 @@ const StudentListContainer = styled.section`
   margin-top: 100px;
 `
 
-const StudentList = ({studentData, setBuyPets, setPetsToView, setCurrentStudent}) => (
+const StudentList = ({studentData, setBuyPets, setPetsToView, setCurrentStudent, scrollToPetDisplay}) => (
   <StudentListContainer>
     <Caption>Students</Caption>
     <SubCaption>Whose pets do you want to see?</SubCaption>
@@ -58,6 +58,7 @@ const StudentList = ({studentData, setBuyPets, setPetsToView, setCurrentStudent}
           setBuyPets={setBuyPets}
           setPetsToView={setPetsToView}
           setCurrentStudent={setCurrentStudent}
+          scrollToPetDisplay={scrollToPetDisplay}
         />
       ))}
     </CellsContainer>

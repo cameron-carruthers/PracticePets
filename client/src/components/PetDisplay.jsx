@@ -3,11 +3,6 @@ import styled from 'styled-components';
 import Scene from './Scene.svg';
 import { PrimaryButton, SecondaryButton } from './Buttons';
 
-const Title = styled.h2`
-  text-align: center;
-  margin: 20px auto;
-`
-
 const Image = styled.img`
   height: 150px;
   margin: 0;
@@ -80,7 +75,7 @@ const PetDisplay = ({pets, name, toggleModal, shopForPets}) => {
     }
 
     return (
-      <ImageBackgroundContainer>
+      <ImageBackgroundContainer id="pet-display">
         {scenes}
         <ButtonContainer>
           <SecondaryButton modifiers="large" onClick={toggleModal}>Submit Practice</SecondaryButton>
@@ -92,7 +87,6 @@ const PetDisplay = ({pets, name, toggleModal, shopForPets}) => {
 
   return (
     <PetDisplayWrapper>
-      {name ? <Title>{name}'s Pets</Title> : <Title>Welcome to PracticePets</Title>}
       {createScenes()}
     </PetDisplayWrapper> 
   )

@@ -2,11 +2,6 @@ import React, { useState } from 'react';
 import Card from './Card.jsx';
 import styled from 'styled-components';
 
-const Heading = styled.h2`
-  text-align: center;
-  margin: 20px auto;
-`
-
 const CardContainer = styled.div`
   display: flex;
   justify-content: space-around;
@@ -21,7 +16,6 @@ const BuyPets = ({orderPet}) => {
 
   return (
     <section>
-      <Heading>Pets for Sale</Heading>
       <CardContainer>
         {pets.map((pet) => (
           <Card pet={pet} orderPet={orderPet} key={Math.random()}/>

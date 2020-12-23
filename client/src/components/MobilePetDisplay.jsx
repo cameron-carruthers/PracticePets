@@ -41,10 +41,6 @@ const ButtonContainer = styled.div`
   justify-content: center;
 `
 
-const Title = styled.h2`
-  text-align: center;
-  margin: 20px auto;
-`
 const Image = styled.img`
   height: 150px;
   margin: 0;
@@ -52,7 +48,6 @@ const Image = styled.img`
 
 const MobilePetDisplay = ({pets, name, toggleModal, shopForPets}) => (
   <ImageBackgroundContainer>
-    {name ? <Title>{name}'s Pets</Title> : <Title>Welcome to PracticePets</Title>}
     {pets ? pets.length > 0 ? pets.map((pet) => (
       <ImageBackground>
         <Image src={require(`../assets/pets/${pet}.png`).default} alt={pet} key={Math.random()}/>

@@ -47,7 +47,7 @@ const Select = styled.select`
   color: ${props => props.inputColor || neutral};
 `
 
-const PurchasePetsForm = ({studentData, toggleModal, retrieveStudentData, currentPet}) => {
+const PurchasePetsForm = ({studentData, toggleModal, retrieveStudentData, currentPet, returnHome }) => {
 
   const [name, setName] = useState('Choose a name')
   const [pointsForCurrentStudent, setPointsForCurrentStudent] = useState(0);
@@ -66,6 +66,7 @@ const PurchasePetsForm = ({studentData, toggleModal, retrieveStudentData, curren
         setInputColor(neutral);
         retrieveStudentData();
         toggleModal();
+        returnHome();
       })
       .catch((err) => {
         console.error(err);
