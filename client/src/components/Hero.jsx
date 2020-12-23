@@ -10,7 +10,6 @@ const Heading = styled.div`
   background-image: url(${Background});
   width: 100vw;
   height: 75vw;
-  overflow: hidden;
   background-size: cover;
   position: relative;
 
