@@ -10,6 +10,7 @@ const Heading = styled.div`
   background-image: url(${Background});
   width: 100vw;
   height: 75vw;
+  max-width: 100%;
   background-size: cover;
   position: relative;
 
