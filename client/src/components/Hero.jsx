@@ -9,8 +9,8 @@ import MobileHero from './MobileHero.jsx';
 const Heading = styled.div`
   background: no-repeat;
   background-image: url(${Background});
-  width: 100vw;
-  height: 100vh;
+  width: 1440px;
+  height: 1024px;
   background-size: cover;
   position: relative;
 
@@ -18,9 +18,9 @@ const Heading = styled.div`
     background-image: url(${MobileBackground});
   }
 
-  @media (max-height: 768px) and (min-width: 560px) {
+  ${'' /* @media (max-height: 768px) and (min-width: 560px) {
     background-image: url(${HorizontalBackground});
-  }
+  } */}
 `
 
 const Hero = ({toggleModal, returnHome}) => (

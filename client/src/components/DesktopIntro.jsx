@@ -25,14 +25,14 @@ const IntroContainer = styled.div`
     top: 21%;
   }
 
-  @media (max-height: 768px) and (min-width: 568px) {
+  ${'' /* @media (max-height: 768px) and (min-width: 568px) {
     top: 10%;
-  }
+  } */}
 
-  @media (max-height: 400px) {
+  ${'' /* @media (max-height: 400px) {
     top: 0%;
     width: 20%;
-  }
+  } */}
 
   @media (max-width: 560px){
     display: none;
@@ -46,9 +46,9 @@ const ButtonContainer = styled.div`
     display: none;
   }
 
-  @media (max-height: 500px) {
+  ${'' /* @media (max-height: 500px) {
     display: none;
-  }
+  } */}
 `
 const DesktopIntro = ({toggleModal}) => (
   <IntroContainer>

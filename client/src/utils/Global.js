@@ -34,9 +34,9 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 2.125rem;
     }
 
-    @media (max-height: 768px) and (min-width: 568px) {
+    ${'' /* @media (max-height: 768px) and (min-width: 568px) {
       font-size: 2.125rem;
-    }
+    } */}
   }
 
   h2 {
@@ -48,9 +48,9 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 2rem;
     }
 
-    @media (max-height: 768px) and (min-width: 568px) {
+    ${'' /* @media (max-height: 768px) and (min-width: 568px) {
       font-size: 2rem;
-    }
+    } */}
   }
 
   h3 {
@@ -62,13 +62,13 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 1.75rem;
     }
 
-    @media (max-height: 768px) and (min-width: 568px) {
+    ${'' /* @media (max-height: 768px) and (min-width: 568px) {
       font-size: 1.75rem;
     }
 
     @media (max-height: 400px) {
       font-size: 1.25rem;
-    }
+    } */}
 
     @media (max-width: 350px) {
       font-size: 1.25rem;
@@ -84,9 +84,9 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 1.5rem;
     }
 
-    @media (max-height: 768px) and (min-width: 568px) {
+    ${'' /* @media (max-height: 768px) and (min-width: 568px) {
       font-size: 1.5rem;
-    }
+    } */}
   }
 
   h5 {
@@ -98,9 +98,9 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 1.25rem;
     }
 
-    @media (max-height: 768px) and (min-width: 568px) {
+    ${'' /* @media (max-height: 768px) and (min-width: 568px) {
       font-size: 1.25rem;
-    }
+    } */}
   }
 
   i {

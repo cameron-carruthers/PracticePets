@@ -14,9 +14,9 @@ const Pet1 = styled.img`
     top: 15%;
   }
 
-  @media (max-height: 768px) and (min-width: 568px) {
+  ${'' /* @media (max-height: 768px) and (min-width: 568px) {
     display: none;
-  }
+  } */}
 
   @media (max-width: 600px) {
     display: none;
@@ -40,23 +40,23 @@ const Pet2 = styled.img`
     width: 40%;
   }
 
-  @media (max-height: 768px) and (min-width: 568px) {
+  ${'' /* @media (max-height: 768px) and (min-width: 568px) {
     left: 20%;
     top: 10%;
     width: 14%;
-  }
-
+  } */}
+${'' /* 
   @media (max-height: 500px) {
     left: 23%;
     top: 10%;
     width: 13%;
-  }
+  } */}
 
-  @media (max-height: 350px) {
+  ${'' /* @media (max-height: 350px) {
     left: 25%;
     top: 2%;
     width: 10%;
-  }
+  } */}
 `
 
 const Pet3 = styled.img`
@@ -71,18 +71,18 @@ const Pet3 = styled.img`
     left: 30%;
   }
 
-  @media (max-height: 768px) and (min-width: 568px) {
+  ${'' /* @media (max-height: 768px) and (min-width: 568px) {
     display: block;
-  }
+  } */}
 
   @media (max-width: 600px) {
     display: none;
   }
 
-  @media (max-height: 500px) {
+  ${'' /* @media (max-height: 500px) {
     width: 10%;
     top: 0;
-  }
+  } */}
 `
 
 const Container = styled.div`
