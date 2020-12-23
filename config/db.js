@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const db = process.env.MONGO_URI || 'mongodb://localhost:27017/practice-pets';
 
+console.log('db', db)
+
 mongoose
   .connect(db, {
     useNewUrlParser: true,

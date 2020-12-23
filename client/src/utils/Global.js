@@ -1,6 +1,6 @@
 import {createGlobalStyle} from 'styled-components';
 import {primaryFont, desktopText, mobileText} from './typography';
-import {background, primary, primaryTwo, neutral} from './colors';
+import {background, primary, primaryTwo} from './colors';
 import {normalize} from 'polished';
 
 export const GlobalStyle = createGlobalStyle`
@@ -30,11 +30,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 700;
     margin: 0;
 
-    @media (max-width: 800px) {
-      font-size: 2.125rem;
-    }
-
-    @media (max-height: 768px) and (min-width: 568px) {
+    @media (max-width: 450px) {
       font-size: 2.125rem;
     }
   }
@@ -44,11 +40,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 700;
     margin: 0;
 
-    @media (max-width: 800px) {
-      font-size: 2rem;
-    }
-
-    @media (max-height: 768px) and (min-width: 568px) {
+    @media (max-width: 450px) {
       font-size: 2rem;
     }
   }
@@ -58,18 +50,11 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 700;
     margin: 0;
 
-    @media (max-width: 800px) {
+    @media (max-width: 450px) {
       font-size: 1.75rem;
     }
 
-    @media (max-height: 768px) and (min-width: 568px) {
-      font-size: 1.75rem;
-    }
-
-    @media (max-height: 400px) {
-      font-size: 1.25rem;
-    }
-
+    ${'' /* For Galaxy Fold and other very small screen sizes */}
     @media (max-width: 350px) {
       font-size: 1.25rem;
     }
@@ -80,11 +65,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 700;
     margin: 0;
 
-    @media (max-width: 800px) {
-      font-size: 1.5rem;
-    }
-
-    @media (max-height: 768px) and (min-width: 568px) {
+    @media (max-width: 450px) {
       font-size: 1.5rem;
     }
   }
@@ -94,11 +75,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 700;
     margin: 0;
 
-    @media (max-width: 800px) {
-      font-size: 1.25rem;
-    }
-
-    @media (max-height: 768px) and (min-width: 568px) {
+    @media (max-width: 450px) {
       font-size: 1.25rem;
     }
   }
@@ -111,6 +88,11 @@ export const GlobalStyle = createGlobalStyle`
     @media (max-width: 600px) {
       margin: 10px;
     }
+  }
+
+  i:focus {
+    outline: 3px solid white;
+    outline-offset: 2px;
   }
 
   label {
