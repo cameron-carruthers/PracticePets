@@ -4,7 +4,6 @@ import { PrimaryButton, SecondaryButton } from './Buttons';
 import Scene from './Scene.svg';
 
 const ImageBackgroundContainer = styled.section`
-  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
 

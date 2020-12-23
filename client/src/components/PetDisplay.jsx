@@ -45,6 +45,10 @@ const ButtonContainer = styled.div`
 const PetDisplayWrapper = styled.section`
   margin-bottom: 100px;
 
+  @media (max-width: 1100px) {
+    margin-bottom: 0px;
+  }
+
   @media (max-width: 750px) {
     display: none;
   }
