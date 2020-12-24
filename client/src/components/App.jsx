@@ -27,7 +27,7 @@ const PetDisplayWrapper = styled.div`
   }
 `
 
-const BuyPetsWrapper = styled.div`
+const BuyPetsWrapper = styled.section`
   margin: -50px auto;
 
   @media (max-width: 1100px) {
@@ -146,7 +146,7 @@ const App = () => {
         </BuyPetsWrapper>
         : 
         <PetDisplayWrapper>
-          <div>
+          <section>
             <Title ref={petDisplayRef}>{currentStudent ? `${currentStudent}'s Pets` : 'Welcome to PracticePets'}</Title>
             <MobilePetDisplay 
                 pets={petsToView} 
@@ -158,7 +158,7 @@ const App = () => {
               toggleModal={toggleModal}
               shopForPets={shopForPets}
               />
-          </div>
+          </section>
           <StudentList 
             studentData={studentData} 
             setBuyPets={setBuyPets} 

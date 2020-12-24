@@ -55,9 +55,9 @@ const Container = styled.div`
 const DesktopHero = ({toggleModal, returnHome}) => (
   <Container>
     <i tabIndex="0" className="fas fa-home fa-2x" onClick={returnHome}></i>
-    <Pet1 src={require('../assets/pets/hippo.png').default}/>
-    <Pet2 src={require('../assets/pets/white-cat.png').default}/>
-    <Pet3 src={require('../assets/pets/bunny.png').default}/>
+    <Pet1 src={require('../assets/pets/hippo.png').default} alt="hippo"/>
+    <Pet2 src={require('../assets/pets/white-cat.png').default} alt="white-cat"/>
+    <Pet3 src={require('../assets/pets/bunny.png').default} alt="bunny"/>
     <DesktopIntro toggleModal={toggleModal}/>
   </Container>
 );

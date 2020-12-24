@@ -37,7 +37,7 @@ const MobileHero = ({returnHome, toggleModal}) => (
     <Title />
     <FlexContainer>
       <Subtitle />
-      <MobilePet src={require('../assets/pets/white-cat.png').default}/>
+      <MobilePet src={require('../assets/pets/white-cat.png').default} alt="white-cat"/>
     </FlexContainer>
     <ButtonContainer>
       <TertiaryButton modifiers="small" onClick={toggleModal}>Submit Practice</TertiaryButton>

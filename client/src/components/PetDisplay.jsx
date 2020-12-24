@@ -37,7 +37,7 @@ const ButtonContainer = styled.div`
   justify-content: center;
 `
 
-const PetDisplayWrapper = styled.section`
+const PetDisplayWrapper = styled.div`
   margin-bottom: 100px;
 
   @media (max-width: 1100px) {
@@ -75,7 +75,7 @@ const PetDisplay = ({pets, name, toggleModal, shopForPets}) => {
     }
 
     return (
-      <ImageBackgroundContainer id="pet-display">
+      <ImageBackgroundContainer>
         {scenes}
         <ButtonContainer>
           <SecondaryButton modifiers="large" onClick={toggleModal}>Submit Practice</SecondaryButton>
