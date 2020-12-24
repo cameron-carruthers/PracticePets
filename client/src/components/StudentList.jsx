@@ -48,10 +48,11 @@ const StudentList = ({studentData, setBuyPets, setPetsToView, setCurrentStudent,
     <Caption>Students</Caption>
     <SubCaption>Whose pets do you want to see?</SubCaption>
     <CellsContainer>
-      {studentData.map(({name, image, points, pets}) => (
+      {studentData.map(({name, gender, image, points, pets}) => (
         <Cell
           key={Math.random()}
           name={name}
+          gender={gender}
           image={image} 
           points={points}
           pets={pets}

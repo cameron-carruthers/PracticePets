@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import FemaleAvatar from './FemaleAvatar.svg';
+import MaleAvatar from './MaleAvatar.svg';
 import { desktopText, mobileText, primary } from '../utils';
 
 const Container = styled.div`
@@ -38,7 +39,7 @@ const Name = styled.h4`
   margin: 0;
 `
 
-const Cell = ({setBuyPets, setPetsToView, setCurrentStudent, scrollToPetDisplay, name, points, pets}) => (
+const Cell = ({setBuyPets, setPetsToView, setCurrentStudent, scrollToPetDisplay, name, gender, points, pets}) => (
   <Container tabIndex="0" onClick={() => {
     setBuyPets(false);
     setPetsToView(pets);
@@ -46,7 +47,7 @@ const Cell = ({setBuyPets, setPetsToView, setCurrentStudent, scrollToPetDisplay,
     scrollToPetDisplay();
   }}>
     <ImageContainer>
-      <img src={FemaleAvatar} alt="Female Avatar" />
+      <img src={gender === 'girl' ? FemaleAvatar : MaleAvatar} alt={gender === 'girl' ? 'Female avatar' : 'Male avatar'} />
     </ImageContainer>
     <Student>
       <Name>{name}</Name>
