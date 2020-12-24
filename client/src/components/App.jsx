@@ -84,6 +84,7 @@ const App = () => {
 
   const shopForPets = () => {
     setBuyPets(true);
+    setCurrentStudent(null);
   }
 
   const returnHome = () => {
