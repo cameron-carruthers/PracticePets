@@ -41,7 +41,7 @@ const BuyPetsWrapper = styled.section`
 
 const Container = styled.div`
   filter: ${props => props.blur ? 'blur(15px)' : 'none'};
-  overflow-x: hidden;
+  overflow: hidden;
 `
 
 const Title = styled.h2`
