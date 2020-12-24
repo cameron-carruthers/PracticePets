@@ -66,6 +66,7 @@ const App = () => {
 
   const petDisplayRef = useRef(null);
   const buyPetsRef = useRef(null);
+  const homeRef = useRef(null);
 
   const scrollToPetDisplay = () => {
     petDisplayRef.current.scrollIntoView({
@@ -87,8 +88,7 @@ const App = () => {
 
   const returnHome = () => {
     setBuyPets(false);
-    window.scrollTo({
-      top: 0,
+    homeRef.current.scrollIntoView({
       behavior: "smooth"
     });
   }
@@ -136,7 +136,7 @@ const App = () => {
   }
 
   return (
-    <Container blur={showModal}>
+    <Container ref={homeRef} blur={showModal}>
       <GlobalStyle />
       <Hero toggleModal={toggleModal} returnHome={returnHome}/>
         {buyPets
