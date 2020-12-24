@@ -110,8 +110,8 @@ const PurchasePetsForm = ({studentData, toggleModal, retrieveStudentData, curren
         <Text>This pet costs <Primary>5 points</Primary></Text>
         {name !== 'Choose a name'? <Text>You have <Secondary>{pointsForCurrentStudent} points</Secondary></Text> : null}
         {name === 'Choose a name' ? null :
-        pointsForCurrentStudent >= 5 ? <Success>You have enough points to buy this pet!</Success> 
-        : <Text>You need <Primary>{5 - pointsForCurrentStudent} more points</Primary> to buy this pet</Text>}
+        pointsForCurrentStudent >= 5 ? <Success>You have enough points!</Success> 
+        : <Text>You need <Primary>{5 - pointsForCurrentStudent} more points</Primary></Text>}
       <ButtonContainer>
         <SecondaryButton onClick={cancel}>Cancel</SecondaryButton>
         {pointsForCurrentStudent >= 5 ? <PrimaryButton onClick={submit}>Submit</PrimaryButton> : <PrimaryButton disabled onClick={submit}>Submit</PrimaryButton>}
