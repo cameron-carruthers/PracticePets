@@ -44,6 +44,7 @@ const ButtonContainer = styled.div`
 const Image = styled.img`
   height: 150px;
   margin: 0;
+  margin-bottom: 10px;
 `
 
 const MobilePetDisplay = ({pets, name, toggleModal, shopForPets}) => (

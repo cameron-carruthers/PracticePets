@@ -6,6 +6,7 @@ import { PrimaryButton, SecondaryButton } from './Buttons';
 const Image = styled.img`
   height: 150px;
   margin: 0;
+  margin-bottom: 10px;
 `
 
 const ImageBackground = styled.div`
