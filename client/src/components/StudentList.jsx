@@ -25,7 +25,7 @@ const CellsContainer = styled.div`
   grid-column-gap: 20px;
   padding: 0 20px;
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1025px) {
     grid-template-columns: repeat(3, 1fr);
   }
 

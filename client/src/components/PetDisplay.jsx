@@ -40,7 +40,7 @@ const ButtonContainer = styled.div`
 const PetDisplayWrapper = styled.div`
   margin-bottom: 100px;
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1025px) {
     margin-bottom: 0px;
   }
 

@@ -17,7 +17,7 @@ const PetDisplayWrapper = styled.div`
   width: 90vw;
   margin: -50px auto;
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1025px) {
     flex-direction: column;
     margin: -500px auto;
   }
@@ -30,7 +30,7 @@ const PetDisplayWrapper = styled.div`
 const BuyPetsWrapper = styled.section`
   margin: -50px auto;
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1025px) {
     margin: -500px auto;
   }
 
