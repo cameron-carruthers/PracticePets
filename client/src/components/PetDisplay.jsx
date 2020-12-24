@@ -4,7 +4,7 @@ import Scene from './Scene.svg';
 import { PrimaryButton, SecondaryButton } from './Buttons';
 
 const Image = styled.img`
-  height: 150px;
+  height: 140px;
   margin: 0;
   margin-bottom: 10px;
 `
