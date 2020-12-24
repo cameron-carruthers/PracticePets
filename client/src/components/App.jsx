@@ -16,11 +16,11 @@ const PetDisplayWrapper = styled.div`
   justify-content: space-around;
   width: 90%;
   max-width: 1400px;
-  margin: -50px auto;
+  margin: -200px auto;
 
   @media (max-width: 1025px) {
     flex-direction: column;
-    margin: -500px auto;
+    margin: -675px auto;
   }
 
   @media (max-width: 600px) {
