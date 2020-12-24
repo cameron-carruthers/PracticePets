@@ -14,7 +14,8 @@ import MobilePetDisplay from './MobilePetDisplay.jsx';
 const PetDisplayWrapper = styled.div`
   display: flex;
   justify-content: space-around;
-  width: 90vw;
+  width: 90%;
+  max-width: 1400px;
   margin: -50px auto;
 
   @media (max-width: 1025px) {
