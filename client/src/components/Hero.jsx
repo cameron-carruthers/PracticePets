@@ -8,7 +8,7 @@ import MobileHero from './MobileHero.jsx';
 const Heading = styled.header`
   background: no-repeat;
   background-image: url(${Background});
-  width: 100vw;
+  width: 100%;
   height: 75vw;
   background-size: cover;
   position: relative;
