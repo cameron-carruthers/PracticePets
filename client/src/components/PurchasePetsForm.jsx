@@ -6,6 +6,7 @@ import { primaryTwo, secondaryTwo, neutral } from '../utils';
 
 const Heading = styled.h4`
   margin: 0 auto;
+  margin-bottom: 5px;
   text-align: center;
 `
 const Image = styled.img`
@@ -19,7 +20,7 @@ const Image = styled.img`
 
 const Text = styled.p`
   text-align: center;
-  margin-bottom: 10px 0;
+  margin-bottom: 10px;
 `
 
 const Primary = styled.span`

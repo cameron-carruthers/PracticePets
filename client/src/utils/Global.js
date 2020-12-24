@@ -144,4 +144,8 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     justify-content: center;
   }
+
+  p {
+    margin: 0;
+  }
 `
