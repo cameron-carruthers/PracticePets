@@ -18,13 +18,12 @@ const Background = styled.div`
 `
 const Image = styled.img`
   height: 250px;
-  margin: 0px 15px;
   text-align: center;
 `
 
 const WideImage = styled.img`
-  width: 225px;
-  margin: 20px 15px;
+  width: 215px;
+  margin: 20px auto;
   text-align: center;
 `
 
@@ -39,7 +38,7 @@ const Price = styled.p`
 `
 const Card = ({pet, orderPet}) => (
   <Background>
-    {pet === 'turtle' || pet === 'frog' || pet === 'horse' || pet === 'monkey'
+    {pet === 'turtle' || pet === 'frog' || pet === 'horse' || pet === 'monkey' || pet === 'koala'
     ? <WideImage src={require(`../assets/pets/${pet}.png`).default} alt={pet} /> 
     : <Image src={require(`../assets/pets/${pet}.png`).default} alt={pet} />}
     <Price>Price: 5 points</Price>
