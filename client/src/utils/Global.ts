@@ -1,6 +1,8 @@
 import {createGlobalStyle} from 'styled-components';
-import {primaryFont, desktopText, mobileText} from './typography';
-import {background, primary, primaryTwo} from './colors';
+// @ts-ignore
+import {primaryFont, desktopText, mobileText} from './typography.ts';
+// @ts-ignore
+import {background, primary, primaryTwo} from './colors.ts';
 import {normalize} from 'polished';
 
 export const GlobalStyle = createGlobalStyle`

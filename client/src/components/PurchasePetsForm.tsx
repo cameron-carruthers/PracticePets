@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { PrimaryButton, SecondaryButton } from './Buttons';
-import { primaryTwo, secondaryTwo, neutral } from '../utils';
+// @ts-ignore
+import { PrimaryButton, SecondaryButton } from './Buttons.ts';
+// @ts-ignore
+import { primaryTwo, secondaryTwo, neutral } from '../utils/index.ts';
 
 interface ISelectProps {
   readonly inputColor: string;

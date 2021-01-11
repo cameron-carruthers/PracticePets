@@ -1,15 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+// @ts-ignore
 import Modal from './Modal.tsx';
+// @ts-ignore
 import PetDisplay from './PetDisplay.tsx';
+// @ts-ignore
 import BuyPets from './BuyPets.tsx'
+// @ts-ignore
 import StudentList from './StudentList.tsx'
+// @ts-ignore
 import Hero from './Hero.tsx';
-import { GlobalStyle } from '../utils';
+// @ts-ignore
+import { GlobalStyle } from '../utils/index.ts';
+// @ts-ignore
 import PurchasePetsForm from './PurchasePetsForm.tsx';
+// @ts-ignore
 import PracticeForm from './PracticeForm.tsx';
+// @ts-ignore
 import MobilePetDisplay from './MobilePetDisplay.tsx';
+
+interface IContainerProps {
+  readonly blur: string;
+};
 
 const PetDisplayWrapper = styled.div`
   display: flex;
@@ -40,7 +53,7 @@ const BuyPetsWrapper = styled.section`
   }
 `
 
-const Container = styled.div`
+const Container = styled.div<IContainerProps>`
   filter: ${props => props.blur ? 'blur(15px)' : 'none'};
 `
 
@@ -137,6 +150,7 @@ const App = () => {
   }
 
   return (
+    // @ts-ignore
     <Container ref={homeRef} blur={showModal}>
       <GlobalStyle />
       <Hero toggleModal={toggleModal} returnHome={returnHome}/>

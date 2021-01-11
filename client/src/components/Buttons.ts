@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { primary } from '../utils';
+// @ts-ignore
+import { primary } from '../utils/index.ts';
 // @ts-ignore
 import { desktopText, mobileText } from '../utils/index.ts';
 import { applyStyleModifiers } from 'styled-components-modifiers';

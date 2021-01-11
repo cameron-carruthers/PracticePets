@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 // @ts-ignore
 import { PrimaryButton } from './Buttons.ts';
-import { desktopText, mobileText } from '../utils/typography';
+// @ts-ignore
+import { desktopText, mobileText } from '../utils/typography.ts';
 
 const Background = styled.div`
   height: 375px;
