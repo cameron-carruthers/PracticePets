@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, FunctionComponent } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 
@@ -16,18 +16,18 @@ const ModalWrapper = styled.div`
   z-index: 100;
 `
 
-const Modal = ({children}) => {
-  const elRef = useRef(null);
-  if (!elRef.current) {
-    const div = document.createElement('div');
-    elRef.current = div;
-  }
+const modalRoot = document.getElementById('modal');
+
+const Modal: FunctionComponent = ({ children }) => {
+  const elRef = useRef(document.createElement("div"));
 
   useEffect(() => {
-    const modalRoot = document.getElementById('modal');
-    modalRoot.appendChild(elRef.current);
-
-    return () => modalRoot.removeChild(elRef.current);
+    if (!modalRoot) {
+      return;
+    }
+    return () => {
+      modalRoot.removeChild(elRef.current);
+    }
   });
 
   return createPortal(<ModalWrapper>{children}</ModalWrapper>, elRef.current);
