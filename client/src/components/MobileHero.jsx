@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Title from './Title.jsx';
-import Subtitle from './Subtitle.jsx';
+import Title from './Title.tsx';
+import Subtitle from './Subtitle.tsx';
 import { TertiaryButton } from './Buttons';
 
 const Container = styled.div`

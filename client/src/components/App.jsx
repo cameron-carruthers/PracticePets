@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import Modal from './Modal.jsx';
+import Modal from './Modal.tsx';
 import PetDisplay from './PetDisplay.jsx';
 import BuyPets from './BuyPets.jsx'
 import StudentList from './StudentList.jsx'

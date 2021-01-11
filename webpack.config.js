@@ -13,6 +13,10 @@ module.exports = {
         }
       },
       {
+        test: /\.tsx?$/,
+        loader: 'babel-loader',
+      },
+      {
         test: /\.css$/,
         use: [
           'style-loader',
