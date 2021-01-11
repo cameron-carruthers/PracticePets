@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Cell from './Cell.tsx';
+import Cell from './Cell';
 import { desktopText, mobileText } from '../utils';
 
 const Caption = styled.h3`
@@ -53,7 +53,6 @@ const StudentList = ({studentData, setBuyPets, setPetsToView, setCurrentStudent,
           key={Math.random()}
           name={name}
           gender={gender}
-          image={image} 
           points={points}
           pets={pets}
           setBuyPets={setBuyPets}
