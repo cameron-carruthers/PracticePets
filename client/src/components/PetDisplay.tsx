@@ -49,7 +49,7 @@ const PetDisplayWrapper = styled.div`
     display: none;
   }
 `
-const PetDisplay = ({pets, name, toggleModal, shopForPets}) => {
+const PetDisplay = ({pets, toggleModal, shopForPets}) => {
 
   const createScenes = () => {
     const scenes = [];

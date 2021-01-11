@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import Modal from './Modal.tsx';
-import PetDisplay from './PetDisplay.jsx';
+import PetDisplay from './PetDisplay.tsx';
 import BuyPets from './BuyPets.tsx'
 import StudentList from './StudentList.tsx'
 import Hero from './Hero.jsx';
 import { GlobalStyle } from '../utils';
 import PurchasePetsForm from './PurchasePetsForm.tsx';
-import PracticeForm from './PracticeForm.jsx';
+import PracticeForm from './PracticeForm.tsx';
 import MobilePetDisplay from './MobilePetDisplay.jsx';
 
 const PetDisplayWrapper = styled.div`

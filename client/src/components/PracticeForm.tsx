@@ -5,6 +5,10 @@ import { PrimaryButton, SecondaryButton } from './Buttons';
 import { desktopText, mobileText } from '../utils';
 import { neutral } from '../utils';
 
+interface ISelectProps {
+  readonly inputColor: string;
+};
+
 const Heading = styled.h4`
   margin: 0 auto;
   margin-bottom: 10px;
@@ -44,7 +48,7 @@ const Points = styled.p`
   }
 `
 
-const Select = styled.select`
+const Select = styled.select<ISelectProps>`
   color: ${props => props.inputColor || neutral};
 `
 
@@ -93,7 +97,7 @@ const PracticeForm = ({studentData, toggleModal, retrieveStudentData}) => {
       <Points>1 point for practicing 5 times</Points>
       <Points>1 additional point for practicing 7 times</Points>
       <Points>1 point for practicing all assigned pieces</Points>
-      <label for="name">
+      <label htmlFor="name">
         Name
         <Select inputColor={name[1]} value={name[0]} onChange={(e) => setName([e.target.value, 'black'])}>
           <option value="">Choose a name</option>
@@ -102,7 +106,7 @@ const PracticeForm = ({studentData, toggleModal, retrieveStudentData}) => {
           ))}
         </Select>
       </label>
-      <label for="practiceAmount">
+      <label htmlFor="practiceAmount">
         How many times did you practice?
         <Select inputColor={practiceAmount[1]} value={practiceAmount[0]} onChange={(e) => setPractice([e.target.value, 'black'])}>
           <option value="">Select the amount of times</option>
@@ -116,15 +120,15 @@ const PracticeForm = ({studentData, toggleModal, retrieveStudentData}) => {
           <option value={7}>7 times</option>
         </Select>
       </label>
-      <label for="completedAssignments">
+      <label htmlFor="completedAssignments">
         Did you practice all assigned pieces?
         <Select inputColor={completedAssignments[1]} value={completedAssignments[0]} onChange={(e) => setCompletedAssignments([e.target.value, 'black'])}>
           <option value="">Select Yes or No</option>
-          <option value={true}>Yes</option>
-          <option value={false}>No</option>
+          <option value="true">Yes</option>
+          <option value="false">No</option>
         </Select>
       </label>
-      <label for="comments">
+      <label htmlFor="comments">
         Comments for Miss Cameron
         <textarea value={comments} onChange={(e) => setComments(e.target.value)} />
       </label>
