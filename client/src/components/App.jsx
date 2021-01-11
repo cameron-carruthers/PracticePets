@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import axios from 'axios';
 import Modal from './Modal.tsx';
 import PetDisplay from './PetDisplay.jsx';
-import BuyPets from './BuyPets.jsx'
-import StudentList from './StudentList.jsx'
+import BuyPets from './BuyPets.tsx'
+import StudentList from './StudentList.tsx'
 import Hero from './Hero.jsx';
 import { GlobalStyle } from '../utils';
-import PurchasePetsForm from './PurchasePetsForm.jsx';
+import PurchasePetsForm from './PurchasePetsForm.tsx';
 import PracticeForm from './PracticeForm.jsx';
 import MobilePetDisplay from './MobilePetDisplay.jsx';
 

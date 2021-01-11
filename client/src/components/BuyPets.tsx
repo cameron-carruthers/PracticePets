@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Card from './Card.js';
+// @ts-ignore
+import Card from './Card.tsx';
 import styled from 'styled-components';
 
 const CardContainer = styled.div`

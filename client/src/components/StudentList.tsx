@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Cell from './Cell';
+// @ts-ignore
+import Cell from './Cell.tsx';
 import { desktopText, mobileText } from '../utils';
 
 const Caption = styled.h3`
