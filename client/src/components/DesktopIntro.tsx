@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+// @ts-ignore
 import Title from './Title.tsx';
+// @ts-ignore
 import Subtitle from './Subtitle.tsx';
 import { TertiaryButton } from './Buttons';
 

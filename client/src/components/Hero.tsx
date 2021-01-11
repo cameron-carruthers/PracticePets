@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Background from './Background.svg';
 import MobileBackground from './MobileBackground.svg';
-import DesktopHero from './DesktopHero.jsx';
+// @ts-ignore
+import DesktopHero from './DesktopHero.tsx';
+// @ts-ignore
 import MobileHero from './MobileHero.tsx';
 
 const Heading = styled.header`

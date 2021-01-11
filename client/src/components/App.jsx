@@ -5,7 +5,7 @@ import Modal from './Modal.tsx';
 import PetDisplay from './PetDisplay.tsx';
 import BuyPets from './BuyPets.tsx'
 import StudentList from './StudentList.tsx'
-import Hero from './Hero.jsx';
+import Hero from './Hero.tsx';
 import { GlobalStyle } from '../utils';
 import PurchasePetsForm from './PurchasePetsForm.tsx';
 import PracticeForm from './PracticeForm.tsx';

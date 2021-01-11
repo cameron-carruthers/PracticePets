@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import DesktopIntro from './DesktopIntro.jsx';
+// @ts-ignore
+import DesktopIntro from './DesktopIntro.tsx';
 
 const Pet1 = styled.img`
   position: absolute;
@@ -54,7 +55,7 @@ const Container = styled.div`
 
 const DesktopHero = ({toggleModal, returnHome}) => (
   <Container>
-    <i tabIndex="0" className="fas fa-home fa-2x" onClick={returnHome}></i>
+    <i tabIndex={0} className="fas fa-home fa-2x" onClick={returnHome}></i>
     <Pet1 src={require('../assets/pets/hippo.png').default} alt="hippo"/>
     <Pet2 src={require('../assets/pets/white-cat.png').default} alt="white-cat"/>
     <Pet3 src={require('../assets/pets/bunny.png').default} alt="bunny"/>
