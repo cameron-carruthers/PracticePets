@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PrimaryButton, SecondaryButton } from './Buttons';
+// @ts-ignore
+import { PrimaryButton, SecondaryButton } from './Buttons.ts';
 import Scene from './Scene.svg';
 
 const ImageBackgroundContainer = styled.div`

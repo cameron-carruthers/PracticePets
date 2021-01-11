@@ -2,7 +2,8 @@ import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
 import FemaleAvatar from './FemaleAvatar.svg';
 import MaleAvatar from './MaleAvatar.svg';
-import { desktopText, mobileText, primary } from '../utils';
+// @ts-ignore
+import { desktopText, mobileText, primary } from '../utils/index.ts';
 
 const Container = styled.div`
   display: grid;

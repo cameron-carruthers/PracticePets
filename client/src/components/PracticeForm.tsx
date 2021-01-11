@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import { PrimaryButton, SecondaryButton } from './Buttons';
-import { desktopText, mobileText } from '../utils';
+// @ts-ignore
+import { desktopText, mobileText } from '../utils/index.ts';
 import { neutral } from '../utils';
 
 interface ISelectProps {

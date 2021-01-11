@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import Title from './Title.tsx';
 // @ts-ignore
 import Subtitle from './Subtitle.tsx';
-import { TertiaryButton } from './Buttons';
+// @ts-ignore
+import { TertiaryButton } from './Buttons.ts';
 
 const Container = styled.div`
   display: flex;

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { primary } from '../utils';
-import { desktopText, mobileText } from '../utils';
+// @ts-ignore
+import { desktopText, mobileText } from '../utils/index.ts';
 import { applyStyleModifiers } from 'styled-components-modifiers';
 
 const BUTTON_MODIFIERS = {
@@ -44,6 +45,7 @@ const Button = styled.button`
   }
 `
 
+// @ts-ignore
 export const PrimaryButton = styled(Button)`
   background: linear-gradient(107.92deg, #9F4DB1 -2.02%, #7C23ED 112%), #FFFFFF;
   border: none;
@@ -59,6 +61,7 @@ export const PrimaryButton = styled(Button)`
   ${applyStyleModifiers(BUTTON_MODIFIERS)}
 `
 
+// @ts-ignore
 export const SecondaryButton = styled(Button)`
   background: none;
   border: 2px solid ${primary};

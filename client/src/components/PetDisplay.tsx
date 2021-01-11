@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Scene from './Scene.svg';
-import { PrimaryButton, SecondaryButton } from './Buttons';
+// @ts-ignore
+import { PrimaryButton, SecondaryButton } from './Buttons.ts';
 
 const Image = styled.img`
   height: 140px;

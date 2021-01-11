@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 // @ts-ignore
 import Cell from './Cell.tsx';
-import { desktopText, mobileText } from '../utils';
+// @ts-ignore
+import { desktopText, mobileText } from '../utils/index.ts';
 
 const Caption = styled.h3`
   text-align: center;

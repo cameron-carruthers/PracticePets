@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PrimaryButton } from './Buttons';
+// @ts-ignore
+import { PrimaryButton } from './Buttons.ts';
 import { desktopText, mobileText } from '../utils/typography';
 
 const Background = styled.div`
