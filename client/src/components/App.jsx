@@ -9,7 +9,7 @@ import Hero from './Hero.jsx';
 import { GlobalStyle } from '../utils';
 import PurchasePetsForm from './PurchasePetsForm.tsx';
 import PracticeForm from './PracticeForm.tsx';
-import MobilePetDisplay from './MobilePetDisplay.jsx';
+import MobilePetDisplay from './MobilePetDisplay.tsx';
 
 const PetDisplayWrapper = styled.div`
   display: flex;

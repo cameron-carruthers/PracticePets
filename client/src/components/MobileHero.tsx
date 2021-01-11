@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+// @ts-ignore
 import Title from './Title.tsx';
+// @ts-ignore
 import Subtitle from './Subtitle.tsx';
 import { TertiaryButton } from './Buttons';
 
@@ -33,7 +35,7 @@ const ButtonContainer = styled.div`
 
 const MobileHero = ({returnHome, toggleModal}) => (
   <Container>
-    <i tabIndex="0" style={{alignSelf: "flex-start"}} className="fas fa-home fa-2x" onClick={returnHome}></i>
+    <i tabIndex={0} style={{alignSelf: "flex-start"}} className="fas fa-home fa-2x" onClick={returnHome}></i>
     <Title />
     <FlexContainer>
       <Subtitle />

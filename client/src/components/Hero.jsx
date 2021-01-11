@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Background from './Background.svg';
 import MobileBackground from './MobileBackground.svg';
 import DesktopHero from './DesktopHero.jsx';
-import MobileHero from './MobileHero.jsx';
+import MobileHero from './MobileHero.tsx';
 
 const Heading = styled.header`
   background: no-repeat;
