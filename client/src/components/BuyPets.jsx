@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Card from './Card.jsx';
 import styled from 'styled-components';
+import { pets } from '../utils/pets';
 
 const CardContainer = styled.div`
   display: flex;
@@ -12,13 +13,11 @@ const CardContainer = styled.div`
 `
 const BuyPets = ({orderPet}) => {
 
-  const [pets] = useState(["bear", "black-cat", "bunny", "chick", "dog", "frog", "giraffe", "hedgehog", "hippo", "horse", "koala", "lion", "monkey", "owl", "penguin", "pig", "sheep", "tiger", "turtle", "white-cat"]);
-
   return (
     <>
       <CardContainer>
         {pets.map((pet) => (
-          <Card pet={pet} orderPet={orderPet} key={Math.random()}/>
+          <Card pet={pet[0]} price={pet[1]} orderPet={orderPet} key={Math.random()}/>
         ))}
       </CardContainer>
     </> 
