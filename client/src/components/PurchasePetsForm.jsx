@@ -58,7 +58,7 @@ const PurchasePetsForm = ({studentData, toggleModal, retrieveStudentData, curren
       e.preventDefault();
       axios.put('/buy-pet', {
         name,
-        points: pointsForCurrentStudent - 5,
+        points: pointsForCurrentStudent - {currentPet[1]},
         pet: currentPet[0]
       })
       .then((res) => {
@@ -111,11 +111,11 @@ const PurchasePetsForm = ({studentData, toggleModal, retrieveStudentData, curren
         <Text>This pet costs <Primary>{currentPet[1]} points</Primary></Text>
         {name !== 'Choose a name'? <Text>You have <Secondary>{pointsForCurrentStudent} points</Secondary></Text> : null}
         {name === 'Choose a name' ? null :
-        pointsForCurrentStudent >= 5 ? <Success>You have enough points!</Success> 
-        : <Text>You need <Primary>{5 - pointsForCurrentStudent} more points</Primary></Text>}
+        pointsForCurrentStudent >= {currentPet[1]} ? <Success>You have enough points!</Success> 
+        : <Text>You need <Primary>{{currentPet[1]} - pointsForCurrentStudent} more points</Primary></Text>}
       <ButtonContainer>
         <SecondaryButton onClick={cancel}>Cancel</SecondaryButton>
-        {pointsForCurrentStudent >= 5 ? <PrimaryButton onClick={submit}>Submit</PrimaryButton> : <PrimaryButton disabled onClick={submit}>Submit</PrimaryButton>}
+        {pointsForCurrentStudent >= {currentPet[1]} ? <PrimaryButton onClick={submit}>Submit</PrimaryButton> : <PrimaryButton disabled onClick={submit}>Submit</PrimaryButton>}
       </ButtonContainer>
     </form>
   )
