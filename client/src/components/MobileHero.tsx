@@ -34,7 +34,12 @@ const ButtonContainer = styled.div`
   }
 `
 
-const MobileHero = ({returnHome, toggleModal}) => (
+interface MobileHeroProps {
+  toggleModal: (form: string) => void;
+  returnHome: () => void;
+}
+
+const MobileHero = ({returnHome, toggleModal}: MobileHeroProps) => (
   <Container>
     <i tabIndex={0} style={{alignSelf: "flex-start"}} className="fas fa-home fa-2x" onClick={returnHome}></i>
     <Title />
