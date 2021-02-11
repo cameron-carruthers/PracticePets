@@ -55,8 +55,14 @@ const Select = styled.select<SelectProps>`
   color: ${props => props.inputColor || neutral};
 `
 
+interface StudentData {
+  name: string;
+  points: number;
+  _id: string;
+}
+
 interface PracticeFormProps {
-  studentData: []
+  studentData: StudentData[]
   toggleModal: (form?: string) => void;
   retrieveStudentData: () => void;
 }

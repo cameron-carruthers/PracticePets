@@ -6,8 +6,8 @@ import { PrimaryButton, SecondaryButton } from './Buttons.ts';
 // @ts-ignore
 import { primaryTwo, secondaryTwo, neutral } from '../utils/index.ts';
 
-interface ISelectProps {
-  readonly inputColor: string;
+interface SelectProps {
+  inputColor: string;
 };
 
 const Heading = styled.h4`
@@ -50,24 +50,38 @@ const ButtonContainer = styled.div`
   margin: 5px 0;
 `
 
-const Select = styled.select<ISelectProps>`
+const Select = styled.select<SelectProps>`
   color: ${props => props.inputColor || neutral};
 `
 
-const PurchasePetsForm = ({studentData, toggleModal, retrieveStudentData, currentPet, returnHome }) => {
+interface PurchasePetsFormProps {
+  studentData: StudentData[]
+  toggleModal: (form?: string) => void;
+  retrieveStudentData: () => void;
+  currentPet: [name: string, price: number];
+  returnHome: () => void;
+}
+
+interface StudentData {
+  name: string;
+  points: number;
+  _id: string;
+}
+
+const PurchasePetsForm = ({studentData, toggleModal, retrieveStudentData, currentPet, returnHome }: PurchasePetsFormProps) => {
 
   const [name, setName] = useState('Choose a name')
   const [pointsForCurrentStudent, setPointsForCurrentStudent] = useState(0);
   const [inputColor, setInputColor] = useState(neutral);
 
-  const submit = (e) => {
+  const submit = (e: MouseEvent) => {
       e.preventDefault();
       axios.put('/buy-pet', {
         name,
         points: pointsForCurrentStudent - currentPet[1],
         pet: currentPet[0]
       })
-      .then((res) => {
+      .then(() => {
         setName('Choose a name')
         setPointsForCurrentStudent(0);
         setInputColor(neutral);
@@ -87,7 +101,7 @@ const PurchasePetsForm = ({studentData, toggleModal, retrieveStudentData, curren
       toggleModal();
     }
   
-    const findPointsForGivenName = (name) => {
+    const findPointsForGivenName = (name: string) => {
       for (let i = 0; i < studentData.length; i++) {
         if (studentData[i].name === name) {
           setPointsForCurrentStudent(studentData[i].points);
