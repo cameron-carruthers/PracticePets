@@ -29,6 +29,7 @@ I wanted to build a fun practice incentive for the online piano classes I teach.
 
 ## Technologies Used
 
+- TypeScript
 - Figma for Wireframing and Mockups
 - React
 - Styled Components (a CSS-in-JS library)
