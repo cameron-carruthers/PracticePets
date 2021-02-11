@@ -40,7 +40,7 @@ const Name = styled.h4`
   margin: 0;
 `
 
-interface ICellProps {
+interface CellProps {
   setBuyPets: (argo0: boolean) => {},
   setPetsToView: (argo0: string) => {},
   setCurrentStudent: (arg0: string) => {},
@@ -51,7 +51,7 @@ interface ICellProps {
   pets: string
 }
 
-const Cell: FunctionComponent<ICellProps> = ({setBuyPets, setPetsToView, setCurrentStudent, scrollToPetDisplay, name, gender, points, pets}) => (
+const Cell = ({setBuyPets, setPetsToView, setCurrentStudent, scrollToPetDisplay, name, gender, points, pets}: CellProps) => (
   <Container tabIndex={0} onClick={() => {
     setBuyPets(false);
     setPetsToView(pets);
