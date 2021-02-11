@@ -8,8 +8,8 @@ import { desktopText, mobileText } from '../utils/index.ts';
 // @ts-ignore
 import { neutral } from '../utils/index.ts';
 
-interface ISelectProps {
-  readonly inputColor: string;
+interface SelectProps {
+  inputColor: string;
 };
 
 const Heading = styled.h4`
@@ -51,18 +51,24 @@ const Points = styled.p`
   }
 `
 
-const Select = styled.select<ISelectProps>`
+const Select = styled.select<SelectProps>`
   color: ${props => props.inputColor || neutral};
 `
 
-const PracticeForm = ({studentData, toggleModal, retrieveStudentData}) => {
+interface PracticeFormProps {
+  studentData: []
+  toggleModal: (form?: string) => void;
+  retrieveStudentData: () => void;
+}
+
+const PracticeForm = ({studentData, toggleModal, retrieveStudentData}: PracticeFormProps) => {
 
   const [name, setName] = useState(['Choose a name', neutral])
   const [practiceAmount, setPractice] = useState(['Select the amount of times you practiced this week', neutral]);
   const [completedAssignments, setCompletedAssignments] = useState(['Select Yes or No', neutral]);
   const [comments, setComments] = useState('');
 
-  const submit = (e) => {
+  const submit = (e: MouseEvent) => {
     e.preventDefault();
     axios.put('/practice', {
       name: name[0],
@@ -70,7 +76,7 @@ const PracticeForm = ({studentData, toggleModal, retrieveStudentData}) => {
       completedAssignments: completedAssignments[0],
       comments
     })
-    .then((res) => {
+    .then(() => {
       setName(['Choose a name', neutral])
       setPractice(['Select the amount of times you practiced this week', neutral])
       setCompletedAssignments(['Select Yes or No', neutral])
@@ -83,7 +89,7 @@ const PracticeForm = ({studentData, toggleModal, retrieveStudentData}) => {
     });
   };
 
-  const cancel = (e) => {
+  const cancel = (e: MouseEvent) => {
     e.preventDefault();
     setName(['Choose a name', neutral])
     setPractice(['Select the amount of times you practiced this week', neutral])

@@ -70,7 +70,7 @@ const BuyPetsHeading = styled.h2`
 const App = () => {
 
   const [studentData, setStudentData] = useState([]);
-  const [currentPet, setCurrentPet] = useState<[name: string, price: number] | []>([]);
+  const [currentPet, setCurrentPet] = useState<[name?: string, price?: number]>([]);
   const [currentStudent, setCurrentStudent] = useState(null);
   const [petsToView, setPetsToView] = useState(null);
   const [buyPets, setBuyPets] = useState(false);
