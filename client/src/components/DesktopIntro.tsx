@@ -27,7 +27,12 @@ const IntroContainer = styled.div`
 const ButtonContainer = styled.div`
   margin-top: 20px;
 `
-const DesktopIntro = ({toggleModal}) => (
+
+interface DesktopIntroProps {
+  toggleModal: (form: string) => void;
+}
+
+const DesktopIntro = ({toggleModal}: DesktopIntroProps) => (
   <IntroContainer>
     <Title />
     <Subtitle />
