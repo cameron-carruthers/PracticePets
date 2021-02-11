@@ -53,7 +53,12 @@ const Container = styled.div`
   }
 `
 
-const DesktopHero = ({toggleModal, returnHome}) => (
+interface DesktopHeroProps {
+  toggleModal: (form: string) => void;
+  returnHome: () => void;
+}
+
+const DesktopHero = ({toggleModal, returnHome}: DesktopHeroProps) => (
   <Container>
     <i tabIndex={0} className="fas fa-home fa-2x" onClick={returnHome}></i>
     <Pet1 src={require('../assets/pets/hippo.png').default} alt="hippo"/>
