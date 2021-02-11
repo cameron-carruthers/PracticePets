@@ -45,7 +45,24 @@ const StudentListContainer = styled.section`
   margin-top: 100px;
 `
 
-const StudentList = ({studentData, setBuyPets, setPetsToView, setCurrentStudent, scrollToPetDisplay}) => (
+interface StudentData {
+  name: string;
+  points: number;
+  _id: string;
+  gender: 'girl' | 'boy';
+  image: string;
+  pets: string[];
+}
+
+interface StudentListProps {
+  studentData: StudentData[];
+  setBuyPets: (buyPets: boolean) => void;
+  setPetsToView: (pets: string[]) => void;
+  setCurrentStudent: (student: StudentData) => void;
+  scrollToPetDisplay: () => void;
+}
+
+const StudentList = ({studentData, setBuyPets, setPetsToView, setCurrentStudent, scrollToPetDisplay}: StudentListProps) => (
   <StudentListContainer>
     <Caption>Students</Caption>
     <SubCaption>Whose pets do you want to see?</SubCaption>

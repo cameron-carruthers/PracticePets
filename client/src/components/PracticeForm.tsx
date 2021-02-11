@@ -59,6 +59,9 @@ interface StudentData {
   name: string;
   points: number;
   _id: string;
+  gender: 'girl' | 'boy';
+  image: string;
+  pets: string[];
 }
 
 interface PracticeFormProps {

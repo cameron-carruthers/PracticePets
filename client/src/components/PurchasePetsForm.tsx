@@ -66,6 +66,9 @@ interface StudentData {
   name: string;
   points: number;
   _id: string;
+  gender: 'girl' | 'boy';
+  image: string;
+  pets: string[];
 }
 
 const PurchasePetsForm = ({studentData, toggleModal, retrieveStudentData, currentPet, returnHome }: PurchasePetsFormProps) => {
