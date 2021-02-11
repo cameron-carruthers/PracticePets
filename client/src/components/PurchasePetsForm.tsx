@@ -64,8 +64,8 @@ const PurchasePetsForm = ({studentData, toggleModal, retrieveStudentData, curren
       e.preventDefault();
       axios.put('/buy-pet', {
         name,
-        points: pointsForCurrentStudent - 5,
-        pet: currentPet
+        points: pointsForCurrentStudent - currentPet[1],
+        pet: currentPet[0]
       })
       .then((res) => {
         setName('Choose a name')
@@ -100,8 +100,13 @@ const PurchasePetsForm = ({studentData, toggleModal, retrieveStudentData, curren
   return (
     <form>
       <Heading>Buy a New Pet</Heading>
+<<<<<<< HEAD:client/src/components/PurchasePetsForm.tsx
       {<Image src={require(`../assets/pets/${currentPet}.png`).default} alt={currentPet} /> || null}
       <label htmlFor="name">
+=======
+      {<Image align="center" src={require(`../assets/pets/${currentPet[0]}.png`).default} alt={currentPet[0]} /> || null}
+      <label for="name">
+>>>>>>> c598936c9f958f809fb59e36925210c6014ef126:client/src/components/PurchasePetsForm.jsx
         Name
         <Select inputColor={inputColor} value={name} onChange={(e) => { 
           setName(e.target.value);
@@ -114,14 +119,14 @@ const PurchasePetsForm = ({studentData, toggleModal, retrieveStudentData, curren
           ))}
         </Select>
       </label>
-        <Text>This pet costs <Primary>5 points</Primary></Text>
+        <Text>This pet costs <Primary>{currentPet[1]} points</Primary></Text>
         {name !== 'Choose a name'? <Text>You have <Secondary>{pointsForCurrentStudent} points</Secondary></Text> : null}
         {name === 'Choose a name' ? null :
-        pointsForCurrentStudent >= 5 ? <Success>You have enough points!</Success> 
-        : <Text>You need <Primary>{5 - pointsForCurrentStudent} more points</Primary></Text>}
+        pointsForCurrentStudent >= currentPet[1] ? <Success>You have enough points!</Success> 
+        : <Text>You need <Primary>{currentPet[1] - pointsForCurrentStudent} more points</Primary></Text>}
       <ButtonContainer>
         <SecondaryButton onClick={cancel}>Cancel</SecondaryButton>
-        {pointsForCurrentStudent >= 5 ? <PrimaryButton onClick={submit}>Submit</PrimaryButton> : <PrimaryButton disabled onClick={submit}>Submit</PrimaryButton>}
+        {pointsForCurrentStudent >= currentPet[1] ? <PrimaryButton onClick={submit}>Submit</PrimaryButton> : <PrimaryButton disabled onClick={submit}>Submit</PrimaryButton>}
       </ButtonContainer>
     </form>
   )

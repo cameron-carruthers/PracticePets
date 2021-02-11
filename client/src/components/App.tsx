@@ -70,7 +70,7 @@ const BuyPetsHeading = styled.h2`
 const App = () => {
 
   const [studentData, setStudentData] = useState([]);
-  const [currentPet, setCurrentPet] = useState(null);
+  const [currentPet, setCurrentPet] = useState([]);
   const [currentStudent, setCurrentStudent] = useState(null);
   const [petsToView, setPetsToView] = useState(null);
   const [buyPets, setBuyPets] = useState(false);
@@ -107,8 +107,8 @@ const App = () => {
     });
   }
   
-  const orderPet = (pet) => {
-    setCurrentPet(pet);
+  const orderPet = (pet, price) => {
+    setCurrentPet([pet, price]);
     toggleModal('buyPets');
   }
 

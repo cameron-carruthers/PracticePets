@@ -25,10 +25,10 @@ app.put('/practice',(req, res) => {
   }
   let points = 0;
 
-  if (req.body.practiceAmount >= 5) {
+  if (req.body.practiceAmount >= 3) {
     points+=1;
   }
-  if (req.body.practiceAmount == 7) {
+  if (req.body.practiceAmount >= 5) {
     points+=1;
   }
   if (req.body.completedAssignments === 'true') {

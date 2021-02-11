@@ -97,8 +97,8 @@ const PracticeForm = ({studentData, toggleModal, retrieveStudentData}) => {
     <form>
       <Heading>Submit Weekly Practice</Heading>
       <SubHeading>How to Earn Points</SubHeading>
-      <Points>1 point for practicing 5 times</Points>
-      <Points>1 additional point for practicing 7 times</Points>
+      <Points>1 point for practicing 3 times</Points>
+      <Points>1 additional point for practicing 5 times</Points>
       <Points>1 point for practicing all assigned pieces</Points>
       <label htmlFor="name">
         Name
