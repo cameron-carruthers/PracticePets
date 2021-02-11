@@ -38,7 +38,14 @@ const Price = styled.p`
     font-size: ${mobileText.mainText};
   }
 `
-const Card = ({pet, price, orderPet}) => (
+
+interface BuyPetsProps {
+  pet: string;
+  price: number;
+  orderPet: (pet: string, price: number) => void;
+};
+
+const Card = ({pet, price, orderPet}: BuyPetsProps) => (
   <Background>
     {pet === 'turtle' || pet === 'frog' || pet === 'horse' || pet === 'monkey' || pet === 'koala'
     ? <WideImage src={require(`../assets/pets/${pet}.png`).default} alt={pet} /> 

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+// @ts-ignore
 import Scene from './Scene.svg';
 // @ts-ignore
 import { PrimaryButton, SecondaryButton } from './Buttons.ts';

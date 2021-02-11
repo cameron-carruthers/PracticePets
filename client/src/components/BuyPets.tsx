@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 // @ts-ignore
 import Card from './Card.tsx';
 import styled from 'styled-components';
-import { pets } from '../utils/pets';
+// @ts-ignore
+import { pets } from '../utils/pets.ts';
 
 const CardContainer = styled.div`
   display: flex;
@@ -12,7 +13,12 @@ const CardContainer = styled.div`
   max-width: 1100px;
   margin: 10px auto;
 `
-const BuyPets = ({orderPet}) => {
+
+interface BuyPetsProps {
+  orderPet: (pet: string, price: number) => void;
+};
+
+const BuyPets = ({orderPet}: BuyPetsProps) => {
 
   return (
     <>

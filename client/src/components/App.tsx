@@ -20,8 +20,8 @@ import PracticeForm from './PracticeForm.tsx';
 // @ts-ignore
 import MobilePetDisplay from './MobilePetDisplay.tsx';
 
-interface IContainerProps {
-  readonly blur: string;
+interface ContainerProps {
+  blur: string;
 };
 
 const PetDisplayWrapper = styled.div`
@@ -53,7 +53,7 @@ const BuyPetsWrapper = styled.section`
   }
 `
 
-const Container = styled.div<IContainerProps>`
+const Container = styled.div<ContainerProps>`
   filter: ${props => props.blur ? 'blur(15px)' : 'none'};
 `
 
@@ -107,7 +107,7 @@ const App = () => {
     });
   }
   
-  const orderPet = (pet, price) => {
+  const orderPet = (pet: string, price: number) => {
     setCurrentPet([pet, price]);
     toggleModal('buyPets');
   }
@@ -125,7 +125,7 @@ const App = () => {
     retrieveStudentData();
   }, [showModal]);
 
-  const toggleModal = (form = 'practice') => {
+  const toggleModal = (form: string = 'practice') => {
     setForm(form);
     setShowModal(!showModal);
   }
