@@ -27,7 +27,12 @@ const Heading = styled.header`
   }
 `
 
-const Hero = ({toggleModal, returnHome}) => (
+interface HeroProps {
+  toggleModal: (form: string) => void;
+  returnHome: () => void;
+}
+
+const Hero = ({toggleModal, returnHome}: HeroProps) => (
   <Heading>
     <MobileHero toggleModal={toggleModal} returnHome={returnHome}/>
     <DesktopHero toggleModal={toggleModal} returnHome={returnHome}/>
