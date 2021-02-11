@@ -70,25 +70,28 @@ const BuyPetsHeading = styled.h2`
 const App = () => {
 
   const [studentData, setStudentData] = useState([]);
-  const [currentPet, setCurrentPet] = useState([]);
+  const [currentPet, setCurrentPet] = useState<[name: string, price: number] | []>([]);
   const [currentStudent, setCurrentStudent] = useState(null);
   const [petsToView, setPetsToView] = useState(null);
   const [buyPets, setBuyPets] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [form, setForm] = useState('practice');
 
-  const petDisplayRef = useRef(null);
-  const buyPetsRef = useRef(null);
-  const homeRef = useRef(null);
+  const petDisplayRef = useRef<HTMLHeadingElement>(null);
+  const buyPetsRef = useRef<HTMLHeadingElement>(null);
+  const homeRef = useRef<HTMLDivElement>(null);
 
   const scrollToPetDisplay = () => {
-    petDisplayRef.current.scrollIntoView({
-      behavior: "smooth"
-    });
+
+    if (petDisplayRef.current) {
+      petDisplayRef.current.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
   }
 
   useEffect(() => {
-    if (buyPets) {
+    if (buyPets && buyPetsRef.current) {
       buyPetsRef.current.scrollIntoView({
         behavior: "smooth"
       });
@@ -102,9 +105,11 @@ const App = () => {
 
   const returnHome = () => {
     setBuyPets(false);
-    homeRef.current.scrollIntoView({
-      behavior: "smooth"
-    });
+    if (homeRef.current) {
+      homeRef.current.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
   }
   
   const orderPet = (pet: string, price: number) => {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 // @ts-ignore
 import Card from './Card.tsx';
 import styled from 'styled-components';
@@ -23,7 +23,7 @@ const BuyPets = ({orderPet}: BuyPetsProps) => {
   return (
     <>
       <CardContainer>
-        {pets.map((pet) => (
+        {pets.map((pet: string) => (
           <Card pet={pet[0]} price={pet[1]} orderPet={orderPet} key={Math.random()}/>
         ))}
       </CardContainer>
