@@ -49,7 +49,13 @@ const Image = styled.img`
   margin-bottom: 10px;
 `
 
-const MobilePetDisplay = ({pets, name, toggleModal, shopForPets}) => (
+interface MobilePetDisplayProps {
+  pets: [string];
+  toggleModal: (form: string) => void;
+  shopForPets: () => void;
+}
+
+const MobilePetDisplay = ({pets, toggleModal, shopForPets}: MobilePetDisplayProps) => (
   <ImageBackgroundContainer>
     {pets ? pets.length > 0 ? pets.map((pet) => (
       <ImageBackground>
