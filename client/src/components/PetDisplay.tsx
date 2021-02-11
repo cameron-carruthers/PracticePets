@@ -63,7 +63,7 @@ const PetDisplay = ({pets, toggleModal, shopForPets}) => {
         while (pets.length > 0) {
           let nextFivePets = pets.slice(0,5);
           scenes.push(
-            <ImageBackground>
+            <ImageBackground key={Math.random()}>
               {nextFivePets.map((pet) => (
                 <Image src={require(`../assets/pets/${pet}.png`).default} alt={pet} key={Math.random()}/>
               ))}
