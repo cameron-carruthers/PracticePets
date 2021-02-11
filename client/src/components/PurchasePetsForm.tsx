@@ -100,13 +100,8 @@ const PurchasePetsForm = ({studentData, toggleModal, retrieveStudentData, curren
   return (
     <form>
       <Heading>Buy a New Pet</Heading>
-<<<<<<< HEAD:client/src/components/PurchasePetsForm.tsx
       {<Image src={require(`../assets/pets/${currentPet}.png`).default} alt={currentPet} /> || null}
       <label htmlFor="name">
-=======
-      {<Image align="center" src={require(`../assets/pets/${currentPet[0]}.png`).default} alt={currentPet[0]} /> || null}
-      <label for="name">
->>>>>>> c598936c9f958f809fb59e36925210c6014ef126:client/src/components/PurchasePetsForm.jsx
         Name
         <Select inputColor={inputColor} value={name} onChange={(e) => { 
           setName(e.target.value);
