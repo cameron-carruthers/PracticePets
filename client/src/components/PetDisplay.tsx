@@ -51,7 +51,14 @@ const PetDisplayWrapper = styled.div`
     display: none;
   }
 `
-const PetDisplay = ({pets, toggleModal, shopForPets}) => {
+
+interface PetDisplayProps {
+  pets: string[];
+  toggleModal: (form: string) => void;
+  shopForPets: () => void;
+}
+
+const PetDisplay = ({pets, toggleModal, shopForPets}: PetDisplayProps) => {
 
   const createScenes = () => {
     const scenes = [];

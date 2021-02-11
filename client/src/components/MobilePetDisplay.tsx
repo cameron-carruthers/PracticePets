@@ -50,14 +50,14 @@ const Image = styled.img`
 `
 
 interface MobilePetDisplayProps {
-  pets: [string];
+  pets: string[];
   toggleModal: (form: string) => void;
   shopForPets: () => void;
 }
 
 const MobilePetDisplay = ({pets, toggleModal, shopForPets}: MobilePetDisplayProps) => (
   <ImageBackgroundContainer>
-    {pets ? pets.length > 0 ? pets.map((pet) => (
+    {pets ? pets.length > 0 ? pets.map((pet: string) => (
       <ImageBackground>
         <Image src={require(`../assets/pets/${pet}.png`).default} alt={pet} key={Math.random()}/>
       </ImageBackground>
